@@ -7,6 +7,8 @@ const { Toolbar, Data: { Selectors } } = require('react-data-grid-addons')
 
 import Columns from './Columns'
 
+import { Panel } from 'react-bootstrap';
+
 const Dashboard = React.createClass({
   getInitialState () {
     this._columns = Columns
@@ -92,20 +94,23 @@ const Dashboard = React.createClass({
   onClearFilters () { this.setState({ filters: {} }) },
 
   render () {
+    const title = <h3>Dashboard</h3>
     return (
-      <div id='grid-wrapper'>
-        <ReactDataGrid
-          columns={this._columns}
-          rowGetter={this.rowGetter}
-          rowsCount={this.getSize()}
-          enableCellSelect
-          cellNavigationMode='loopOverRow'
-          toolbar={<Toolbar enableFilter />}
-          onGridRowsUpdated={this.handleGridRowsUpdated}
-          onGridSort={this.handleGridSort}
-          onAddFilter={this.handleFilterChange}
-          onClearFilters={this.onClearFilters} />
-      </div>
+        <div id='grid-wrapper'>
+          <Panel header={title} bsStyle='primary'>
+          <ReactDataGrid
+            columns={this._columns}
+            rowGetter={this.rowGetter}
+            rowsCount={this.getSize()}
+            enableCellSelect
+            cellNavigationMode='loopOverRow'
+            toolbar={<Toolbar enableFilter />}
+            onGridRowsUpdated={this.handleGridRowsUpdated}
+            onGridSort={this.handleGridSort}
+            onAddFilter={this.handleFilterChange}
+            onClearFilters={this.onClearFilters} />
+          </Panel>
+        </div>
     )
   }
 })

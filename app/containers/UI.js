@@ -18,16 +18,16 @@ module.exports = React.createClass({
       <div>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
-        <NavigationDrawer
+        {/* <NavigationDrawer
           navItems={Sidebar}
           mobileDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY}
           tabletDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY}
           desktopDrawerType={NavigationDrawer.DrawerTypes.FULL_HEIGHT}
           toolbarTitle={this.state.toolbarTitle}
           drawerTitle={<span className='md-text--theme-primary'>Messaging</span>}
-        >
+        > */}
           {this.props.children}
-        </NavigationDrawer>
+        {/* </NavigationDrawer> */}
       </div>
     )
   }
