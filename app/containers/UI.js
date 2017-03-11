@@ -61,7 +61,7 @@ class UI extends Component {
     return (
       <div>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <Sidebar sidebar={<b>Content</b>}
+        <Sidebar sidebar={<div style={{width: '350'}}>Chat here</div>}
           open={this.state.sidebarOpen}
           docked={this.state.sidebarDocked}
           onSetOpen={this.onSetSidebarOpen}
