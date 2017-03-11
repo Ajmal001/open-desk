@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
-import NavigationDrawer from 'react-md/lib/NavigationDrawers'
-import Sidebar from './Sidebar'
+import Sidebar from 'react-sidebar'
+// import NavigationDrawer from 'react-md/lib/NavigationDrawers'
+// import Sidebar from './Sidebar'
 import Dashboard from './Dashboard'
 
 //  Initialize Firebase with re(act)-firebase
@@ -13,7 +14,9 @@ class UI extends Component {
     this.state = {
       cases: [],
       chat: [],
-      user: false
+      user: false,
+      sidebarOpen: false,
+      sidebarDocked: false
     }
     this.auth = this.auth.bind(this)
     this.unauth = this.unauth.bind(this)
@@ -30,6 +33,17 @@ class UI extends Component {
       state: 'chat'
       // asArray: true
     })
+
+    var mql = window.matchMedia(`(min-width: 800px)`)
+    mql.addListener(this.mediaQueryChanged)
+    this.setState({mql: mql, sidebarDocked: mql.matches})
+  }
+  componentWillUnmount () {
+    this.state.mql.removeListener(this.mediaQueryChanged)
+  }
+
+  mediaQueryChanged () {
+    this.setState({sidebarDocked: this.state.mql.matches})
   }
 
   auth () {
@@ -47,20 +61,14 @@ class UI extends Component {
     return (
       <div>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-
-        <NavigationDrawer
-          navItems={[<Sidebar
-            auth={this.auth} unauth={this.unauth}
-            user={this.state.user} chat={this.state.chat}
-          />]}
-          mobileDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY}
-          tabletDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY}
-          desktopDrawerType={NavigationDrawer.DrawerTypes.FULL_HEIGHT}
-          toolbarTitle={<span>Open Industry | <em>case manager</em></span>}
-          drawerTitle={<span className='md-text--theme-primary'>Messaging</span>}
-        >
+        <Sidebar sidebar={<b>Content</b>}
+          open={this.state.sidebarOpen}
+          docked={this.state.sidebarDocked}
+          onSetOpen={this.onSetSidebarOpen}
+          pullRight
+          >
           <Dashboard />
-        </NavigationDrawer>
+        </Sidebar>
       </div>
     )
   }
