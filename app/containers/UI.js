@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Sidebar from 'react-sidebar'
 // import NavigationDrawer from 'react-md/lib/NavigationDrawers'
 // import Sidebar from './Sidebar'
-import Dashboard from './Dashboard'
+import MyApp from './Dashboard/myApp.jsx'
 
 //  Initialize Firebase with re(act)-firebase
 import Firebase from '../firebase'
@@ -67,7 +67,7 @@ class UI extends Component {
           onSetOpen={this.onSetSidebarOpen}
           pullRight
           >
-          <Dashboard />
+          <MyApp />
         </Sidebar>
       </div>
     )

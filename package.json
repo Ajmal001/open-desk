@@ -18,6 +18,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "ag-grid": "^8.2.0",
+    "ag-grid-enterprise": "^8.2.0",
+    "ag-grid-react": "^8.2.0",
     "firechat": "^3.0.1",
     "immutability-helper": "^2.1.1",
     "is-mobile": "^0.2.2",
