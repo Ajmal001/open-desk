@@ -31,6 +31,18 @@ after@0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
 
+ag-grid-enterprise@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-enterprise/-/ag-grid-enterprise-8.2.0.tgz#0e892b889fc1db48628fbb6c38f8db82644516d7"
+
+ag-grid-react@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-8.2.0.tgz#a9c33f2095de4c6f81b21d9c4d1e6389c4d5d4b2"
+
+ag-grid@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/ag-grid/-/ag-grid-8.2.0.tgz#5919332e8bd62cffb9f769e8d8f151797116a750"
+
 ajv-keywords@^1.0.0:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-1.5.1.tgz#314dd0a4b3368fad3dfcdc54ede6171b886daf3c"
@@ -2245,6 +2257,10 @@ flat-cache@^1.2.1:
 flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
+
+font-awesome@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
 
 for-in@^1.0.1:
   version "1.0.2"

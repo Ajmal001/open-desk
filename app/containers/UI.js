@@ -5,6 +5,8 @@ import Sidebar from 'react-sidebar'
 // import Sidebar from './Sidebar'
 import MyApp from './Dashboard/myApp.jsx'
 
+// import 'font-awesome/scss/font-awesome.scss'
+
 //  Initialize Firebase with re(act)-firebase
 import Firebase from '../firebase'
 

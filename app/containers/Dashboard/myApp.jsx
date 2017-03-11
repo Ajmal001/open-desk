@@ -200,7 +200,7 @@ export default class MyApp extends React.Component {
             enableSorting='true'
             enableFilter='true'
             groupHeaders='true'
-            rowHeight='22'
+            rowHeight='48'
                     />
         </div>
             )

@@ -38,6 +38,7 @@ const common = merge(
     appMountId: 'app'
   }),
   parts.loadJSX(PATHS.app),
+  parts.loadFontAwesome(),
   parts.lintJSX(PATHS.app)
 )
 
