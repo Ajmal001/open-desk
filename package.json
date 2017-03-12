@@ -1,13 +1,10 @@
 {
-  "name": "ag-grid-react-example",
-  "version": "8.2.0",
-  "description": "Example Reach applicaiton using ag-Grid.",
+  "name": "case-stroke",
+  "version": "1.0.0",
+  "description": "Ag-grid powered SPA for free enterprise use.",
   "main": "dist/ag-grid-react-example.js",
   "scripts": {
-    "full-width": "webpack-dev-server --config webpack.config.full-width.js --progress --colors --hot --inline",
-    "standard": "webpack-dev-server --config webpack.config.standard.js --progress --colors --hot --inline",
-    "grouped": "webpack-dev-server --config webpack.config.grouped.js --progress --colors --hot --inline",
-    "large": "webpack-dev-server --config webpack.config.large.js --progress --colors --hot --inline",
+    "start": "webpack-dev-server --config webpack.config.js --progress --colors --hot --inline",
     "clean": "rimraf dist",
     "build-standard": "npm run clean && webpack --config webpack.config.standard.js --progress --profile --bail"
   },
@@ -21,12 +18,8 @@
     "data",
     "table"
   ],
-  "author": "Niall Crosby <niall.crosby@gmail.com>",
+  "author": "Ryan Keller <rykeller@uw.edu>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ceolter/ag-grid-react-example/issues"
-  },
-  "homepage": "http://www.ag-grid.com/",
   "devDependencies": {
     "babel-loader": "6.2.1",
     "babel-preset-es2015": "6.3.13",
@@ -46,5 +39,3 @@
     "ag-grid-react": "8.2.x"
   }
 }
-
-
