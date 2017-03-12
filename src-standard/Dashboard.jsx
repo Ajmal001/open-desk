@@ -8,10 +8,8 @@ import MyReactHeaderComponent from './MyReactHeaderComponent.jsx'
 import './manifest.css'
 
 export default class Dashboard extends React.Component {
-
   constructor () {
     super()
-
     this.state = {
       quickFilterText: null,
       showGrid: true,
@@ -19,7 +17,6 @@ export default class Dashboard extends React.Component {
       columnDefs: new ColDefFactory().createColDefs(),
       rowData: new RowDataFactory().createRowData(),
       icons: {
-        // columnRemoveFromGroup: '<i class="material-icons">cancel</i>',
         menu: '<i class="material-icons>menu</i>',
         filter: '<i class="material-icons">filter_list</i>',
         sortAscending: '<i class="material-icons">arrow_drop_down</i>',

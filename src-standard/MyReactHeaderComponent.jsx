@@ -2,14 +2,11 @@ import React from 'react'
 
 // Header component to be used as default for all the columns.
 export default class MyReactHeaderComponent extends React.Component {
-
   constructor (props) {
     super(props)
-
     this.props.column.addEventListener('sortChanged', this.onSortChanged.bind(this))
-
-        // The state of this component contains the current sort state of this column
-        // The possible values are: 'asc', 'desc' and ''
+    // The state of this component contains the current sort state of this column
+    // The possible values are: 'asc', 'desc' and ''
     this.state = {
       sorted: ''
     }
@@ -20,11 +17,9 @@ export default class MyReactHeaderComponent extends React.Component {
     if (this.props.enableSorting) {
       let downArrowClass = 'customSortDownLabel ' + (this.state.sorted === 'desc' ? ' active' : '')
       let upArrowClass = 'customSortUpLabel ' + (this.state.sorted === 'asc' ? ' active' : '')
-      let removeArrowClass = 'customSortRemoveLabel '
 
       sortElements.push(<div className={downArrowClass} onClick={this.onSortRequested.bind(this, 'desc')}><i className='material-icons'>arrow_downward</i></div>)
       sortElements.push(<div className={upArrowClass} onClick={this.onSortRequested.bind(this, 'asc')}><i className='material-icons'>arrow_upward</i></div>)
-      sortElements.push(<div className={removeArrowClass} onClick={this.onSortRequested.bind(this, '')}><i className='material-icons'>cancel</i></div>)
     }
 
     let menuButton = null

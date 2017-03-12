@@ -10,7 +10,7 @@ import Dashboard from './Dashboard.jsx'
 // put the index.js reference at the end fo the index.html, but i prefer this way.
 document.addEventListener('DOMContentLoaded', () => {
   var mount = document.getElementById('react-mount')
-  render (
+  render(
     <Dashboard />,
       mount
     )

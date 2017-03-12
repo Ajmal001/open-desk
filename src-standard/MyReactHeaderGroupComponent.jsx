@@ -2,7 +2,6 @@ import React from 'react'
 
 // Header component to be used as default for all the columns.
 export default class MyReactHeaderGroupComponent extends React.Component {
-
   constructor (props) {
     super(props)
     this.props.columnGroup.getOriginalColumnGroup().addEventListener('expandedChanged', this.onExpandChanged.bind(this))
@@ -17,7 +16,7 @@ export default class MyReactHeaderGroupComponent extends React.Component {
 
     return <div>
       <div className='customHeaderLabel'> {this.props.displayName}</div>
-      <div onClick={this.expandOrCollapse.bind(this)} className={arrowClassName}><i className="material-icons">chevron_right</i></div>
+      <div onClick={this.expandOrCollapse.bind(this)} className={arrowClassName}><i className='material-icons'>chevron_right</i></div>
     </div>
   }
 
