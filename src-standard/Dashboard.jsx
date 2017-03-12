@@ -21,14 +21,11 @@ export default class Dashboard extends React.Component {
       columnDefs: new ColDefFactory().createColDefs(),
       rowData: new RowDataFactory().createRowData(),
       icons: {
-        columnRemoveFromGroup: '<i class="material-icons">cancel</i>',
+        // columnRemoveFromGroup: '<i class="material-icons">cancel</i>',
+        menu: '<i class="material-icons>menu</i>',
         filter: '<i class="material-icons">filter_list</i>',
         sortAscending: '<i class="material-icons">arrow_drop_down</i>',
-        sortDescending: '<i class="material-icons">arrow_drop_up</i>',
-        groupExpanded: '<i class="material-icons">expand_less</i>',
-        groupContracted: '<i class="material-icons">expand_more</i>',
-        columnGroupOpened: '<i class="material-icons">expand_less</i>',
-        columnGroupClosed: '<i class="material-icons">expand_more</i>'
+        sortDescending: '<i class="material-icons">arrow_drop_up</i>'
       }
     }
 
@@ -75,21 +72,18 @@ export default class Dashboard extends React.Component {
     })
   }
   render () {
-    var gridTemplate
-    var bottomHeaderTemplate
-    var topHeaderTemplate
-
-    topHeaderTemplate = (
+    let toolbar = (
       <div>
         <div style={{float: 'right'}}>
           <input type='text' onChange={this.onQuickFilterText.bind(this)}
             placeholder='Type text to filter...' />
+          <button onClick={this.onRefreshData.bind(this)}>Generate Dataset</button>
           <button id='btDestroyGrid' disabled={!this.state.showGrid}
             onClick={this.onShowGrid.bind(this, false)}>Destroy Grid
                     </button>
           <button id='btCreateGrid' disabled={this.state.showGrid} onClick={this.onShowGrid.bind(this, true)}>
                         Create Grid
-                    </button>
+          </button>
         </div>
         <div style={{padding: '4px'}}>
           <b>Employees Skills and Contact Details</b> <span id='rowCount' />
@@ -97,35 +91,24 @@ export default class Dashboard extends React.Component {
       </div>
         )
 
-        // showing the bottom header and grid is optional, so we put in a switch
-    if (this.state.showGrid) {
-      bottomHeaderTemplate = (
-        <div>
-          <div style={{clear: 'both'}} />
-          <div style={{padding: 4}} className={'toolbar'}>
-            <span>
-              <button onClick={this.onRefreshData.bind(this)}>Generate Dataset</button>
-            </span>
-          </div>
-          <div style={{clear: 'both'}} />
-        </div>
-            )
-      gridTemplate = (
+    return <div style={{width: '100%'}} >
+      <div style={{padding: '16px'}}>
+        {toolbar}
         <div style={{height: 400}} className='ag-material'>
           <AgGridReact
-            // gridOptions is optional - it's possible to provide
-            // all values as React props
+              // gridOptions is optional - it's possible to provide
+              // all values as React props
             gridOptions={this.gridOptions}
-            // listening for events
+              // listening for events
             onGridReady={this.onGridReady.bind(this)}
-            // binding to simple properties
+              // binding to simple properties
             quickFilterText={this.state.quickFilterText}
-            // binding to an object property
+              // binding to an object property
             icons={this.state.icons}
-            // binding to array properties
+              // binding to array properties
             columnDefs={this.state.columnDefs}
             rowData={this.state.rowData}
-            // no binding, just providing hard coded strings for the properties
+              // no binding, just providing hard coded strings for the properties
             suppressRowClickSelection
             rowSelection='multiple'
             enableColResize
@@ -133,16 +116,8 @@ export default class Dashboard extends React.Component {
             enableFilter
             groupHeaders
             rowHeight='48'
-        />
+          />
         </div>
-            )
-    }
-
-    return <div style={{width: '100%'}} >
-      <div style={{padding: '16px'}}>
-        {topHeaderTemplate}
-        {bottomHeaderTemplate}
-        {gridTemplate}
       </div>
     </div>
   }
