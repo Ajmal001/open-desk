@@ -91,10 +91,9 @@ export default class Dashboard extends React.Component {
       </div>
         )
 
-    return <div style={{width: '100%'}} >
-      <div style={{padding: '16px'}}>
+    return <div>
         {toolbar}
-        <div style={{height: 400}} className='ag-material'>
+        <div className='ag-grid-container ag-material'>
           <AgGridReact
               // gridOptions is optional - it's possible to provide
               // all values as React props
@@ -118,7 +117,6 @@ export default class Dashboard extends React.Component {
             rowHeight='48'
           />
         </div>
-      </div>
     </div>
   }
 

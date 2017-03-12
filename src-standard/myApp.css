@@ -1,4 +1,13 @@
 
+.ag-grid-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: calc(100vh - 64px);
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 .ag-cell {
     padding-top: 2px !important;
     padding-bottom: 2px !important;

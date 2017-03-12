@@ -1,8 +1,4 @@
 <html>
-
-    <!-- This index file is common for both the standard and large examples. As to which project you are running
-        depends on whether you use 'npm run standard' or 'npm run large' -->
-
     <head>
         <meta charset="utf-8">
         <script type="text/javascript" src="dist/bundle.js" charset="utf-8"></script>
@@ -12,46 +8,27 @@
       rel="stylesheet">
     </head>
 
-    <!-- Put some spacing around the buttons - not needed, just makes it look nice -->
     <style>
         button {
             margin-left: 4px;
             margin-right: 4px;
         }
-
-        .customHeaderMenuButton{
+        .customHeaderMenuButton, .customHeaderLabel, .customSortDownLabel, .customSortUpLabel, .customSortRemoveLabel{
             float: left;
         }
-
-        .customHeaderLabel{
-            float: left;
-        }
-
-        .customSortDownLabel{
-            float: left;
-        }
-
-        .customSortUpLabel{
-            float: left;
-        }
-
         .customSortRemoveLabel{
-            float: left;
-            font-size: 8px;
+            font-size: 6px;
         }
 
         .active {
-            color: cornflowerblue;
+            color: #82B1FF; /*Blue A200 */
         }
-
         .hidden { display:none; }
 
-
         .customHeaderLabel{
-            margin-top: 3px;
+            margin: 2px;
             float: left;
         }
-
         .customExpandButton{
             float:right;
             margin-top: 5px;
@@ -65,7 +42,6 @@
             -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
             transform: rotate(180deg);
         }
-
         .collapsed {
             color: cornflowerblue;
             animation-name: toCollapsed;
@@ -74,12 +50,9 @@
             -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
             transform: rotate(0deg);
         }
-
-
-
         @keyframes  toExpanded{
             from {
-                color: cornflowerblue;
+                color: #82B1FF; /*Blue A200 */
                 -ms-transform: rotate(0deg); /* IE 9 */
                 -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
                 transform: rotate(0deg);
@@ -91,7 +64,6 @@
                 transform: rotate(180deg);
             }
         }
-
         @keyframes toCollapsed{
             from {
                 color: black;
@@ -100,7 +72,7 @@
                 transform: rotate(180deg);
             }
             to {
-                color: cornflowerblue;
+                color: #82B1FF; /*Blue A200 */
                 -ms-transform: rotate(0deg); /* IE 9 */
                 -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
                 transform: rotate(0deg);
