@@ -1,11 +1,11 @@
 import React from 'react'
 import {AgGridReact} from 'ag-grid-react'
-import RowDataFactory from './RowDataFactory'
-import ColDefFactory from './ColDefFactory.jsx'
-import MyReactDateComponent from './MyReactDateComponent.jsx'
-import MyReactHeaderComponent from './MyReactHeaderComponent.jsx'
+import RowDataFactory from './Data/RowDataFactory'
+import ColDefFactory from './Data/ColDefFactory'
+import MyReactDateComponent from './Components/MyReactDateComponent'
+import MyReactHeaderComponent from './Components/MyReactHeaderComponent'
 
-import './manifest.css'
+import '../manifest.css'
 
 export default class Dashboard extends React.Component {
   constructor () {

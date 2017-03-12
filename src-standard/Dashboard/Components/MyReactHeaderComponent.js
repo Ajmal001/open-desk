@@ -17,7 +17,6 @@ export default class MyReactHeaderComponent extends React.Component {
     if (this.props.enableSorting) {
       let downArrowClass = 'customSortDownLabel ' + (this.state.sorted === 'desc' ? ' active' : '')
       let upArrowClass = 'customSortUpLabel ' + (this.state.sorted === 'asc' ? ' active' : '')
-
       sortElements.push(<div className={downArrowClass} onClick={this.onSortRequested.bind(this, 'desc')}><i className='material-icons'>arrow_downward</i></div>)
       sortElements.push(<div className={upArrowClass} onClick={this.onSortRequested.bind(this, 'asc')}><i className='material-icons'>arrow_upward</i></div>)
     }
@@ -40,17 +39,11 @@ export default class MyReactHeaderComponent extends React.Component {
 
   onSortChanged () {
     if (this.props.column.isSortAscending()) {
-      this.setState({
-        sorted: 'asc'
-      })
+      this.setState({ sorted: 'asc' })
     } else if (this.props.column.isSortDescending()) {
-      this.setState({
-        sorted: 'desc'
-      })
+      this.setState({ sorted: 'desc' })
     } else {
-      this.setState({
-        sorted: ''
-      })
+      this.setState({ sorted: '' })
     }
   };
 
@@ -58,12 +51,4 @@ export default class MyReactHeaderComponent extends React.Component {
     this.props.showColumnMenu(this.refs.menuButton)
   };
 
-}
-
-// the grid will always pass in one props called 'params',
-// which is the grid passing you the params for the cellRenderer.
-// this piece is optional. the grid will always pass the 'params'
-// props, so little need for adding this validation meta-data.
-MyReactHeaderComponent.propTypes = {
-  params: React.PropTypes.object
 }

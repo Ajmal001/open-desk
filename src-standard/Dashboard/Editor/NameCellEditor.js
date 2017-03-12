@@ -1,5 +1,5 @@
 import React from 'react'
-import RefData from './RefData'
+import RefData from '../Data/RefData'
 
 var KEY_BACKSPACE = 8
 var KEY_DELETE = 46

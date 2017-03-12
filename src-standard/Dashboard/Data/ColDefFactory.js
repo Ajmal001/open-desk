@@ -1,10 +1,10 @@
-import SkillsCellRenderer from './SkillsCellRenderer.jsx'
-import NameCellEditor from './NameCellEditor.jsx'
-import ProficiencyCellRenderer from './ProficiencyCellRenderer.jsx'
+import SkillsCellRenderer from '../Formatter/SkillsCellRenderer'
+import NameCellEditor from '../Editor/NameCellEditor'
+import ProficiencyCellRenderer from '../Formatter/ProficiencyCellRenderer'
 import RefData from './RefData'
-import SkillsFilter from './SkillsFilter.jsx'
-import ProficiencyFilter from './ProficiencyFilter.jsx'
-import MyReactHeaderGroupComponent from './MyReactHeaderGroupComponent.jsx'
+import SkillsFilter from '../Filter/SkillsFilter'
+import ProficiencyFilter from '../Filter/ProficiencyFilter'
+import MyReactHeaderGroupComponent from '../Components/MyReactHeaderGroupComponent'
 
 export default class ColDefFactory {
 

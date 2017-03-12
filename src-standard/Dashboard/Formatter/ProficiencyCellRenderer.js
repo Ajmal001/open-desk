@@ -1,5 +1,5 @@
 import React from 'react'
-import RefData from './RefData'
+import RefData from '../Data/RefData'
 
 // cell renderer for the proficiency column. this is a very basic cell renderer,
 // it is arguable that we should not of used React and just returned a string of

@@ -1,5 +1,5 @@
 import React from 'react'
-import RefData from './RefData'
+import RefData from '../Data/RefData'
 
 export default class SkillsCellRenderer extends React.Component {
 

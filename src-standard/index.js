@@ -3,7 +3,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import Dashboard from './Dashboard.jsx'
+import Dashboard from './Dashboard/Dashboard'
 // // is there a better way of doing this?
 
 // waiting for dom to load before booting react. we could alternatively

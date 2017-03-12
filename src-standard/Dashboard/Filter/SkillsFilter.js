@@ -1,5 +1,5 @@
 import React from 'react'
-import RefData from './RefData'
+import RefData from '../Data/RefData'
 
 // the skills filter component. this can be laid out much better in a 'React'
 // way. there are design patterns you can apply to layout out your React classes.
