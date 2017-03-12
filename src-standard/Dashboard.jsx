@@ -6,7 +6,10 @@ import MyReactDateComponent from './MyReactDateComponent.jsx'
 import MyReactHeaderComponent from './MyReactHeaderComponent.jsx'
 import './myApp.css'
 
-export default class MyApp extends React.Component {
+import 'ag-grid-root/dist/styles/ag-grid.css'
+import 'ag-grid-root/dist/styles/theme-material.css'
+
+export default class Dashboard extends React.Component {
 
   constructor () {
     super()
@@ -18,8 +21,8 @@ export default class MyApp extends React.Component {
       columnDefs: new ColDefFactory().createColDefs(),
       rowData: new RowDataFactory().createRowData(),
       icons: {
-        columnRemoveFromGroup: <i className='material-icons'>cancel</i>,
-        filter: <i className='material-icons'>filter_list</i>,
+        columnRemoveFromGroup: '<i class="material-icons">cancel</i>',
+        filter: '<i class="material-icons">filter_list</i>',
         sortAscending: '<i class="material-icons">arrow_drop_down</i>',
         sortDescending: '<i class="material-icons">arrow_drop_up</i>',
         groupExpanded: '<i class="material-icons">expand_less</i>',
@@ -40,9 +43,6 @@ export default class MyApp extends React.Component {
       // We register the react date component that ag-grid will use to render
       dateComponentFramework: MyReactDateComponent,
       // this is how you listen for events using gridOptions
-      onModelUpdated: function () {
-        console.log('event onModelUpdated received')
-      },
       defaultColDef: {
         headerComponentFramework: MyReactHeaderComponent,
         headerComponentParams: {
@@ -60,37 +60,12 @@ export default class MyApp extends React.Component {
     })
   }
 
-  onToggleToolPanel (event) {
-    this.setState({showToolPanel: event.target.checked})
-  }
-
   onGridReady (params) {
     this.api = params.api
     this.columnApi = params.columnApi
   }
-
-  selectAll () {
-    this.api.selectAll()
-  }
-
-  deselectAll () {
-    this.api.deselectAll()
-  }
-
-  setCountryVisible (visible) {
-    this.columnApi.setColumnVisible('country', visible)
-  }
-
   onQuickFilterText (event) {
     this.setState({quickFilterText: event.target.value})
-  }
-
-  onCellClicked (event) {
-    console.log('onCellClicked: ' + event.data.name + ', col ' + event.colIndex)
-  }
-
-  onRowSelected (event) {
-    console.log('onRowSelected: ' + event.node.data.name)
   }
 
   onRefreshData () {
@@ -99,20 +74,6 @@ export default class MyApp extends React.Component {
       rowData: newRowData
     })
   }
-
-  invokeSkillsFilterMethod () {
-    var skillsFilter = this.api.getFilterInstance('skills')
-    var componentInstance = skillsFilter.getFrameworkComponentInstance()
-    componentInstance.helloFromSkillsFilter()
-  }
-
-  dobFilter () {
-    let dateFilterComponent = this.gridOptions.api.getFilterInstance('dob')
-    dateFilterComponent.setFilterType('equals')
-    dateFilterComponent.setDateFrom('2000-01-01')
-    this.gridOptions.api.onFilterChanged()
-  }
-
   render () {
     var gridTemplate
     var bottomHeaderTemplate
@@ -140,48 +101,24 @@ export default class MyApp extends React.Component {
     if (this.state.showGrid) {
       bottomHeaderTemplate = (
         <div>
-          <div style={{padding: 4}} className={'toolbar'}>
-            <span>
-                            Grid API:
-                            <button onClick={this.selectAll.bind(this)}>Select All</button>
-              <button onClick={this.deselectAll.bind(this)}>Clear Selection</button>
-            </span>
-            <span style={{marginLeft: 20}}>
-                            Column API:
-                            <button onClick={this.setCountryVisible.bind(this, false)}>Hide Country Column</button>
-              <button onClick={this.setCountryVisible.bind(this, true)}>Show Country Column</button>
-            </span>
-          </div>
           <div style={{clear: 'both'}} />
           <div style={{padding: 4}} className={'toolbar'}>
             <span>
-              <label>
-                <input type='checkbox' onChange={this.onToggleToolPanel.bind(this)} />
-                            Show Tool Panel
-                        </label>
-              <button onClick={this.onRefreshData.bind(this)}>Refresh Data</button>
-            </span>
-            <span style={{marginLeft: 20}}>
-                            Filter API:
-                            <button onClick={this.invokeSkillsFilterMethod.bind(this, false)}>Invoke Skills Filter Method</button>
-              <button onClick={this.dobFilter.bind(this)}>DOB equals to 01/01/2000</button>
+              <button onClick={this.onRefreshData.bind(this)}>Generate Dataset</button>
             </span>
           </div>
           <div style={{clear: 'both'}} />
         </div>
             )
       gridTemplate = (
-        <div style={{height: 400}} className='ag-fresh'>
+        <div style={{height: 400}} className='ag-material'>
           <AgGridReact
             // gridOptions is optional - it's possible to provide
             // all values as React props
             gridOptions={this.gridOptions}
             // listening for events
             onGridReady={this.onGridReady.bind(this)}
-            onRowSelected={this.onRowSelected.bind(this)}
-            onCellClicked={this.onCellClicked.bind(this)}
             // binding to simple properties
-            showToolPanel={this.state.showToolPanel}
             quickFilterText={this.state.quickFilterText}
             // binding to an object property
             icons={this.state.icons}
@@ -201,7 +138,7 @@ export default class MyApp extends React.Component {
             )
     }
 
-    return <div style={{width: '100%'}} className='ag-material'>
+    return <div style={{width: '100%'}} >
       <div style={{padding: '16px'}}>
         {topHeaderTemplate}
         {bottomHeaderTemplate}
