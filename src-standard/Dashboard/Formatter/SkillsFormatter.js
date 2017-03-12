@@ -1,7 +1,7 @@
 import React from 'react'
 import RefData from '../Data/RefData'
 
-export default class SkillsCellRenderer extends React.Component {
+export default class SkillsFormatter extends React.Component {
 
   render () {
     var skills = []
@@ -21,6 +21,6 @@ export default class SkillsCellRenderer extends React.Component {
 // which is the grid passing you the params for the cellRenderer.
 // this piece is optional. the grid will always pass the 'params'
 // props, so little need for adding this validation meta-data.
-SkillsCellRenderer.propTypes = {
+SkillsFormatter.propTypes = {
   params: React.PropTypes.object
 }

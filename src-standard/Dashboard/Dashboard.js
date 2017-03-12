@@ -1,9 +1,11 @@
 import React from 'react'
 import {AgGridReact} from 'ag-grid-react'
+
 import RowDataFactory from './Data/RowDataFactory'
 import ColDefFactory from './Data/ColDefFactory'
-import MyReactDateComponent from './Components/MyReactDateComponent'
-import MyReactHeaderComponent from './Components/MyReactHeaderComponent'
+
+import ColumnHeader from './Components/ColumnHeader'
+import DatePicker from './Components/DatePicker'
 
 import '../manifest.css'
 
@@ -33,10 +35,10 @@ export default class Dashboard extends React.Component {
     */
     this.gridOptions = {
       // We register the react date component that ag-grid will use to render
-      dateComponentFramework: MyReactDateComponent,
+      dateComponentFramework: DatePicker,
       // this is how you listen for events using gridOptions
       defaultColDef: {
-        headerComponentFramework: MyReactHeaderComponent,
+        headerComponentFramework: ColumnHeader,
         headerComponentParams: {
           menuIcon: 'fa-bars'
         }

@@ -1,10 +1,14 @@
-import SkillsCellRenderer from '../Formatter/SkillsCellRenderer'
-import NameCellEditor from '../Editor/NameCellEditor'
-import ProficiencyCellRenderer from '../Formatter/ProficiencyCellRenderer'
 import RefData from './RefData'
+
+import ColumnGroupHeader from '../Components/ColumnGroupHeader'
+
 import SkillsFilter from '../Filter/SkillsFilter'
 import ProficiencyFilter from '../Filter/ProficiencyFilter'
-import MyReactHeaderGroupComponent from '../Components/MyReactHeaderGroupComponent'
+
+import ProficiencyFormatter from '../Formatter/ProficiencyFormatter'
+import SkillsFormatter from '../Formatter/SkillsFormatter'
+
+import StringEditor from '../Editor/StringEditor'
 
 export default class ColDefFactory {
 
@@ -14,13 +18,13 @@ export default class ColDefFactory {
         suppressMenu: true, pinned: true},
       {
         headerName: 'Employee',
-        headerGroupComponentFramework: MyReactHeaderGroupComponent,
+        headerGroupComponentFramework: ColumnGroupHeader,
         children: [
           {
             headerName: 'Name', field: 'name', enableRowGroup: true, enablePivot: true,
             width: 150, pinned: true, editable: true,
                         // use a React cellEditor
-            cellEditorFramework: NameCellEditor
+            cellEditorFramework: StringEditor
           }, {
             headerName: 'Country', field: 'country', width: 150, enableRowGroup: true, enablePivot: true,
                         // an example of using a non-React cell renderer
@@ -43,13 +47,13 @@ export default class ColDefFactory {
         children: [
           {headerName: 'Skills', width: 125, suppressSorting: true, field: 'skills', enableRowGroup: true, enablePivot: true,
                         // supply a React component
-            cellRendererFramework: SkillsCellRenderer,
+            cellRendererFramework: SkillsFormatter,
                         // supply a React component
             filterFramework: SkillsFilter
           },
           {headerName: 'Proficiency', field: 'proficiency', width: 135, enableValue: true,
                         // supply a React component
-            cellRendererFramework: ProficiencyCellRenderer,
+            cellRendererFramework: ProficiencyFormatter,
                         // supply a React component
             filterFramework: ProficiencyFilter
           }

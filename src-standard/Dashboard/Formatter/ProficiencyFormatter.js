@@ -4,7 +4,7 @@ import RefData from '../Data/RefData'
 // cell renderer for the proficiency column. this is a very basic cell renderer,
 // it is arguable that we should not of used React and just returned a string of
 // html as a normal ag-Grid cellRenderer.
-export default class ProficiencyCellRenderer extends React.Component {
+export default class ProficiencyFormatter extends React.Component {
 
   render () {
     var backgroundColor

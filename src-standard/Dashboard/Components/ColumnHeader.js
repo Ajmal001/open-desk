@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Header component to be used as default for all the columns.
-export default class MyReactHeaderComponent extends React.Component {
+export default class ColumnHeader extends React.Component {
   constructor (props) {
     super(props)
     this.props.column.addEventListener('sortChanged', this.onSortChanged.bind(this))

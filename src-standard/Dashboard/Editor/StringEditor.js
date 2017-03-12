@@ -6,7 +6,7 @@ var KEY_DELETE = 46
 var KEY_F2 = 113
 
 // cell renderer for the proficiency column. this is a very basic cell editor,
-export default class NameCellEditor extends React.Component {
+export default class StringEditor extends React.Component {
 
   constructor (props) {
     super(props)
@@ -111,6 +111,6 @@ export default class NameCellEditor extends React.Component {
 // which is the grid passing you the params for the cellRenderer.
 // this piece is optional. the grid will always pass the 'params'
 // props, so little need for adding this validation meta-data.
-NameCellEditor.propTypes = {
+StringEditor.propTypes = {
   params: React.PropTypes.object
 }
