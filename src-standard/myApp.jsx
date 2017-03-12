@@ -5,9 +5,6 @@ import ColDefFactory from './ColDefFactory.jsx'
 import MyReactDateComponent from './MyReactDateComponent.jsx'
 import MyReactHeaderComponent from './MyReactHeaderComponent.jsx'
 import './myApp.css'
-import 'ag-grid-enterprise'
-
-// take this line out if you do not want to use ag-Grid-Enterprise
 
 export default class MyApp extends React.Component {
 
@@ -32,16 +29,17 @@ export default class MyApp extends React.Component {
       }
     }
 
-        // the grid options are optional, because you can provide every property
-        // to the grid via standard React properties. however, the react interface
-        // doesn't block you from using the standard JavaScript interface if you
-        // wish. Maybe you have the gridOptions stored as JSON on your server? If
-        // you do, the providing the gridOptions as a standalone object is just
-        // what you want!
+    /* the grid options are optional, because you can provide every property
+    to the grid via standard React properties. however, the react interface
+    doesn't block you from using the standard JavaScript interface if you
+    wish. Maybe you have the gridOptions stored as JSON on your server? If
+    you do, the providing the gridOptions as a standalone object is just
+    what you want!
+    */
     this.gridOptions = {
-            // We register the react date component that ag-grid will use to render
+      // We register the react date component that ag-grid will use to render
       dateComponentFramework: MyReactDateComponent,
-            // this is how you listen for events using gridOptions
+      // this is how you listen for events using gridOptions
       onModelUpdated: function () {
         console.log('event onModelUpdated received')
       },
@@ -51,7 +49,7 @@ export default class MyApp extends React.Component {
           menuIcon: 'fa-bars'
         }
       },
-        // this is a simple property
+      // this is a simple property
       rowBuffer: 10 // no need to set this, the default is fine for almost all scenarios
     }
   }
