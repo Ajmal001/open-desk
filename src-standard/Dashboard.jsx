@@ -72,49 +72,49 @@ export default class Dashboard extends React.Component {
   render () {
     let toolbar = (
       <div>
-        <div style={{float: 'right'}}>
-          <input type='text' onChange={this.onQuickFilterText.bind(this)}
-            placeholder='Type text to filter...' />
-          <button onClick={this.onRefreshData.bind(this)}>Generate Dataset</button>
-          <button id='btDestroyGrid' disabled={!this.state.showGrid}
-            onClick={this.onShowGrid.bind(this, false)}>Destroy Grid
-                    </button>
-          <button id='btCreateGrid' disabled={this.state.showGrid} onClick={this.onShowGrid.bind(this, true)}>
-                        Create Grid
+        <input type='text' placeholder='Filter...'
+          onChange={this.onQuickFilterText.bind(this)}
+          />
+        <button onClick={this.onRefreshData.bind(this)}>
+            Generate Dataset
           </button>
-        </div>
-        <div style={{padding: '4px'}}>
-          <b>Employees Skills and Contact Details</b> <span id='rowCount' />
-        </div>
+        <button id='btDestroyGrid' disabled={!this.state.showGrid}
+          onClick={this.onShowGrid.bind(this, false)}>
+            Destroy Grid
+          </button>
+        <button id='btCreateGrid' disabled={this.state.showGrid}
+          onClick={this.onShowGrid.bind(this, true)}>
+            Create Grid
+          </button>
       </div>
         )
 
     return <div>
-        {toolbar}
-        <div className='ag-grid-container ag-material'>
-          <AgGridReact
-              // gridOptions is optional - it's possible to provide
-              // all values as React props
-            gridOptions={this.gridOptions}
-              // listening for events
-            onGridReady={this.onGridReady.bind(this)}
-              // binding to simple properties
-            quickFilterText={this.state.quickFilterText}
-              // binding to an object property
-            icons={this.state.icons}
-              // binding to array properties
-            columnDefs={this.state.columnDefs}
-            rowData={this.state.rowData}
-              // no binding, just providing hard coded strings for the properties
-            suppressRowClickSelection
-            rowSelection='multiple'
-            enableColResize
-            enableSorting
-            enableFilter
-            groupHeaders
-            rowHeight='48'
+      {toolbar}
+      <div id='ag-grid-container' className='ag-material'>
+        <AgGridReact
+          // gridOptions is optional - it's possible to provide
+          // all values as React props
+          gridOptions={this.gridOptions}
+          // listening for events
+          onGridReady={this.onGridReady.bind(this)}
+          // binding to simple properties
+          quickFilterText={this.state.quickFilterText}
+          // binding to an object property
+          icons={this.state.icons}
+          // binding to array properties
+          columnDefs={this.state.columnDefs}
+          rowData={this.state.rowData}
+          // no binding, just providing hard coded strings for the properties
+          suppressRowClickSelection
+          rowSelection='multiple'
+          enableColResize
+          enableSorting
+          enableFilter
+          groupHeaders
+          rowHeight='48'
           />
-        </div>
+      </div>
     </div>
   }
 

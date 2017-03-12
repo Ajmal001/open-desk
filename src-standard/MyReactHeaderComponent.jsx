@@ -20,10 +20,10 @@ export default class MyReactHeaderComponent extends React.Component {
     if (this.props.enableSorting) {
       let downArrowClass = 'customSortDownLabel ' + (this.state.sorted === 'desc' ? ' active' : '')
       let upArrowClass = 'customSortUpLabel ' + (this.state.sorted === 'asc' ? ' active' : '')
-      let removeArrowClass = 'customSortRemoveLabel ' + (this.state.sorted === '' ? ' active' : '')
+      let removeArrowClass = 'customSortRemoveLabel '
 
-      sortElements.push(<div className={downArrowClass} onClick={this.onSortRequested.bind(this, 'desc')}><i className='material-icons'>arrow_drop_down</i></div>)
-      sortElements.push(<div className={upArrowClass} onClick={this.onSortRequested.bind(this, 'asc')}><i className='material-icons'>arrow_drop_up</i></div>)
+      sortElements.push(<div className={downArrowClass} onClick={this.onSortRequested.bind(this, 'desc')}><i className='material-icons'>arrow_downward</i></div>)
+      sortElements.push(<div className={upArrowClass} onClick={this.onSortRequested.bind(this, 'asc')}><i className='material-icons'>arrow_upward</i></div>)
       sortElements.push(<div className={removeArrowClass} onClick={this.onSortRequested.bind(this, '')}><i className='material-icons'>cancel</i></div>)
     }
 

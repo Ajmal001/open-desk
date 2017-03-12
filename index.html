@@ -7,81 +7,9 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     </head>
-
-    <style>
-        button {
-            margin-left: 4px;
-            margin-right: 4px;
-        }
-        .customHeaderMenuButton, .customHeaderLabel, .customSortDownLabel, .customSortUpLabel, .customSortRemoveLabel{
-            float: left;
-        }
-        .customSortRemoveLabel{
-            font-size: 6px;
-        }
-
-        .active {
-            color: #82B1FF; /*Blue A200 */
-        }
-        .hidden { display:none; }
-
-        .customHeaderLabel{
-            margin: 2px;
-            float: left;
-        }
-        .customExpandButton{
-            float:right;
-            margin-top: 5px;
-            margin-left: 3px;
-        }
-
-        .expanded {
-            animation-name: toExpanded;
-            animation-duration: 1s;
-            -ms-transform: rotate(180deg); /* IE 9 */
-            -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-            transform: rotate(180deg);
-        }
-        .collapsed {
-            color: cornflowerblue;
-            animation-name: toCollapsed;
-            animation-duration: 1s;
-            -ms-transform: rotate(0deg); /* IE 9 */
-            -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
-            transform: rotate(0deg);
-        }
-        @keyframes  toExpanded{
-            from {
-                color: #82B1FF; /*Blue A200 */
-                -ms-transform: rotate(0deg); /* IE 9 */
-                -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
-                transform: rotate(0deg);
-            }
-            to {
-                color: black;
-                -ms-transform: rotate(180deg); /* IE 9 */
-                -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-                transform: rotate(180deg);
-            }
-        }
-        @keyframes toCollapsed{
-            from {
-                color: black;
-                -ms-transform: rotate(180deg); /* IE 9 */
-                -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-                transform: rotate(180deg);
-            }
-            to {
-                color: #82B1FF; /*Blue A200 */
-                -ms-transform: rotate(0deg); /* IE 9 */
-                -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
-                transform: rotate(0deg);
-            }
-        }
-    </style>
-
+    
     <body>
-        <div id="myAppContainer"></div>
+        <div id="react-mount"></div>
     </body>
 
 </html>
