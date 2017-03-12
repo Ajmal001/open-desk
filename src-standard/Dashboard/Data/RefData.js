@@ -35,25 +35,96 @@ RefData.COUNTRY_CODES = {
   Uruguay: 'uy'
 }
 
-RefData.COUNTRIES = [
-        {country: 'Ireland', continent: 'Europe', language: 'English'},
-        {country: 'Spain', continent: 'Europe', language: 'Spanish'},
-        {country: 'United Kingdom', continent: 'Europe', language: 'English'},
-        {country: 'France', continent: 'Europe', language: 'French'},
-        {country: 'Germany', continent: 'Europe', language: '(other)'},
-        {country: 'Sweden', continent: 'Europe', language: '(other)'},
-        {country: 'Norway', continent: 'Europe', language: '(other)'},
-        {country: 'Italy', continent: 'Europe', language: '(other)'},
-        {country: 'Greece', continent: 'Europe', language: '(other)'},
-        {country: 'Iceland', continent: 'Europe', language: '(other)'},
-        {country: 'Portugal', continent: 'Europe', language: 'Portuguese'},
-        {country: 'Malta', continent: 'Europe', language: '(other)'},
-        {country: 'Brazil', continent: 'South America', language: 'Portuguese'},
-        {country: 'Argentina', continent: 'South America', language: 'Spanish'},
-        {country: 'Colombia', continent: 'South America', language: 'Spanish'},
-        {country: 'Peru', continent: 'South America', language: 'Spanish'},
-        {country: 'Venezuela', continent: 'South America', language: 'Spanish'},
-        {country: 'Uruguay', continent: 'South America', language: 'Spanish'}
+RefData.COUNTRIES = [{
+  country: 'Ireland',
+  continent: 'Europe',
+  language: 'English'
+},
+{
+  country: 'Spain',
+  continent: 'Europe',
+  language: 'Spanish'
+},
+{
+  country: 'United Kingdom',
+  continent: 'Europe',
+  language: 'English'
+},
+{
+  country: 'France',
+  continent: 'Europe',
+  language: 'French'
+},
+{
+  country: 'Germany',
+  continent: 'Europe',
+  language: '(other)'
+},
+{
+  country: 'Sweden',
+  continent: 'Europe',
+  language: '(other)'
+},
+{
+  country: 'Norway',
+  continent: 'Europe',
+  language: '(other)'
+},
+{
+  country: 'Italy',
+  continent: 'Europe',
+  language: '(other)'
+},
+{
+  country: 'Greece',
+  continent: 'Europe',
+  language: '(other)'
+},
+{
+  country: 'Iceland',
+  continent: 'Europe',
+  language: '(other)'
+},
+{
+  country: 'Portugal',
+  continent: 'Europe',
+  language: 'Portuguese'
+},
+{
+  country: 'Malta',
+  continent: 'Europe',
+  language: '(other)'
+},
+{
+  country: 'Brazil',
+  continent: 'South America',
+  language: 'Portuguese'
+},
+{
+  country: 'Argentina',
+  continent: 'South America',
+  language: 'Spanish'
+},
+{
+  country: 'Colombia',
+  continent: 'South America',
+  language: 'Spanish'
+},
+{
+  country: 'Peru',
+  continent: 'South America',
+  language: 'Spanish'
+},
+{
+  country: 'Venezuela',
+  continent: 'South America',
+  language: 'Spanish'
+},
+{
+  country: 'Uruguay',
+  continent: 'South America',
+  language: 'Spanish'
+}
 ]
 
 RefData.DOB = [
@@ -121,7 +192,8 @@ RefData.ADDRESSES = [
   '365 Emerald Grove Line, Level, NC, 28381-1514, US, (919) 976-7958',
   '1207 Iron Extension, Klickitat, SC, 29197-8571, US, (803) 535-7888',
   '6770 Cinder Glen, Caronport, OH, 45053-5002, US, (440) 369-4018',
-  '7619 Tawny Carrefour, Senlac, NV, 89529-9876, US, (775) 901-6433']
+  '7619 Tawny Carrefour, Senlac, NV, 89529-9876, US, (775) 901-6433'
+]
 
 RefData.IT_SKILLS = ['android', 'css', 'html5', 'mac', 'windows']
 

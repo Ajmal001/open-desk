@@ -13,28 +13,34 @@ export default class ProficiencyFilter extends React.Component {
     }
   }
 
-    // called by agGrid
+  // called by agGrid
   doesFilterPass (params) {
     var value = this.props.valueGetter(params)
     var valueAsNumber = parseFloat(value)
 
     switch (this.state.selected) {
-      case PROFICIENCY_NAMES[1] : return valueAsNumber >= 40
-      case PROFICIENCY_NAMES[2] : return valueAsNumber >= 60
-      case PROFICIENCY_NAMES[3] : return valueAsNumber >= 80
-      default : return true
+      case PROFICIENCY_NAMES[1]:
+        return valueAsNumber >= 40
+      case PROFICIENCY_NAMES[2]:
+        return valueAsNumber >= 60
+      case PROFICIENCY_NAMES[3]:
+        return valueAsNumber >= 80
+      default:
+        return true
     }
   };
 
-    // called by agGrid
+  // called by agGrid
   isFilterActive () {
     return this.state.selected !== PROFICIENCY_NAMES[0]
   };
 
   onButtonPressed (name) {
     console.log(name)
-    var newState = {selected: name}
-        // set the state, and once it is done, then call filterChangedCallback
+    var newState = {
+      selected: name
+    }
+    // set the state, and once it is done, then call filterChangedCallback
     this.setState(newState, this.props.filterChangedCallback)
     console.log(name)
   }
@@ -50,7 +56,7 @@ export default class ProficiencyFilter extends React.Component {
             {name}
           </label>
         </div>
-            )
+      )
     })
 
     return (
@@ -63,11 +69,11 @@ export default class ProficiencyFilter extends React.Component {
     )
   }
 
-    // these are other method that agGrid calls that we
-    // could of implemented, but they are optional and
-    // we have no use for them in this particular filter.
-    // getApi() {}
-    // afterGuiAttached(params) {}
-    // onNewRowsLoaded() {}
-    // onAnyFilterChanged() {}
+  // these are other method that agGrid calls that we
+  // could of implemented, but they are optional and
+  // we have no use for them in this particular filter.
+  // getApi() {}
+  // afterGuiAttached(params) {}
+  // onNewRowsLoaded() {}
+  // onAnyFilterChanged() {}
 }

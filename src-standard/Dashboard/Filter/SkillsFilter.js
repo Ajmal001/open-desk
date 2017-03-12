@@ -39,7 +39,7 @@ export default class SkillsFilter extends React.Component {
     })
   }
 
-    // called by agGrid
+  // called by agGrid
   doesFilterPass (params) {
     var rowSkills = params.data.skills
     var passed = true
@@ -55,10 +55,10 @@ export default class SkillsFilter extends React.Component {
     return passed
   };
 
-    // called by agGrid
+  // called by agGrid
   isFilterActive () {
     var somethingSelected = this.state.android || this.state.css ||
-            this.state.html5 || this.state.mac || this.state.windows
+      this.state.html5 || this.state.mac || this.state.windows
     return somethingSelected
   };
 
@@ -66,7 +66,7 @@ export default class SkillsFilter extends React.Component {
     var newValue = event.target.checked
     var newModel = {}
     newModel[skill] = newValue
-        // set the state, and once it is done, then call filterChangedCallback
+    // set the state, and once it is done, then call filterChangedCallback
     this.setState(newModel, this.props.filterChangedCallback)
   }
 
@@ -84,7 +84,7 @@ export default class SkillsFilter extends React.Component {
             </div>
           </span>
         </label>
-            )
+      )
 
       skillsTemplates.push(template)
     })
@@ -99,10 +99,10 @@ export default class SkillsFilter extends React.Component {
     )
   }
 
-    // these are other method that agGrid calls that we
-    // could of implemented, but they are optional and
-    // we have no use for them in this particular filter.
-    // afterGuiAttached(params) {}
-    // onNewRowsLoaded() {}
-    // onAnyFilterChanged() {}
+  // these are other method that agGrid calls that we
+  // could of implemented, but they are optional and
+  // we have no use for them in this particular filter.
+  // afterGuiAttached(params) {}
+  // onNewRowsLoaded() {}
+  // onAnyFilterChanged() {}
 }

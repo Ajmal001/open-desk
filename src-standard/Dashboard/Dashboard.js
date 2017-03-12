@@ -1,5 +1,7 @@
 import React from 'react'
-import {AgGridReact} from 'ag-grid-react'
+import {
+  AgGridReact
+} from 'ag-grid-react'
 
 import RowDataFactory from './Data/RowDataFactory'
 import ColDefFactory from './Data/ColDefFactory'
@@ -59,7 +61,9 @@ export default class Dashboard extends React.Component {
     this.columnApi = params.columnApi
   }
   onQuickFilterText (event) {
-    this.setState({quickFilterText: event.target.value})
+    this.setState({
+      quickFilterText: event.target.value
+    })
   }
 
   onRefreshData () {
@@ -86,7 +90,7 @@ export default class Dashboard extends React.Component {
             Create Grid
           </button>
       </div>
-        )
+    )
 
     return <div>
       {toolbar}

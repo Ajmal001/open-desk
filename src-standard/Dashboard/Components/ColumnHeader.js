@@ -39,11 +39,17 @@ export default class ColumnHeader extends React.Component {
 
   onSortChanged () {
     if (this.props.column.isSortAscending()) {
-      this.setState({ sorted: 'asc' })
+      this.setState({
+        sorted: 'asc'
+      })
     } else if (this.props.column.isSortDescending()) {
-      this.setState({ sorted: 'desc' })
+      this.setState({
+        sorted: 'desc'
+      })
     } else {
-      this.setState({ sorted: '' })
+      this.setState({
+        sorted: ''
+      })
     }
   };
 
