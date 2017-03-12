@@ -4,10 +4,8 @@ import RowDataFactory from './RowDataFactory'
 import ColDefFactory from './ColDefFactory.jsx'
 import MyReactDateComponent from './MyReactDateComponent.jsx'
 import MyReactHeaderComponent from './MyReactHeaderComponent.jsx'
-import './myApp.css'
 
-import 'ag-grid-root/dist/styles/ag-grid.css'
-import 'ag-grid-root/dist/styles/theme-material.css'
+import './manifest.css'
 
 export default class Dashboard extends React.Component {
 
