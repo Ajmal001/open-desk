@@ -17,7 +17,7 @@ export default class MyReactHeaderGroupComponent extends React.Component {
 
     return <div>
       <div className='customHeaderLabel'> {this.props.displayName}</div>
-      <div onClick={this.expandOrCollapse.bind(this)} className={arrowClassName}><i className='fa fa-arrow-right' /></div>
+      <div onClick={this.expandOrCollapse.bind(this)} className={arrowClassName}><i className="material-icons">chevron_right</i></div>
     </div>
   }
 
