@@ -18,6 +18,105 @@
 // $fa-font-path: "~font-awesome/fonts";
 // @import './styles/scss/font-awesome.scss';
 
+//  Roboto Font and Material Icons
+// @import './styles/google-fonts.css';
+//
+// @import './styles/dashboard.css';
 @import './styles/ag-grid.css';
 @import './styles/theme-material.css';
-@import './styles/myApp.css';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#ag-grid-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: calc(100vh - 64px);
+  /*padding-left: 16px;
+  padding-right: 16px;*/
+}
+
+.material-icons {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+.ag-header-group-cell, .ag-header-cell {
+  border: 1px solid #d3d3d3 !important;
+}
+
+/* Base styles */
+
+
+    button {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    .customHeaderMenuButton, .customHeaderLabel, .customSortDownLabel, .customSortUpLabel, .customSortRemoveLabel{
+        float: left;
+    }
+    .customSortRemoveLabel{
+        font-size: 6px;
+    }
+
+    .active {
+        color: #82B1FF; /*Blue A200 */
+    }
+    .hidden { display:none; }
+
+    .customHeaderLabel{
+        margin: 2px;
+        float: left;
+    }
+    .customExpandButton{
+        float:right;
+    }
+
+    .expanded {
+        animation-name: toExpanded;
+        animation-duration: 1s;
+        -ms-transform: rotate(180deg); /* IE 9 */
+        -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+        transform: rotate(180deg);
+    }
+    .collapsed {
+        color: cornflowerblue;
+        animation-name: toCollapsed;
+        animation-duration: 1s;
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+    }
+    @keyframes  toExpanded{
+        from {
+            color: #82B1FF; /*Blue A200 */
+            -ms-transform: rotate(0deg); /* IE 9 */
+            -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+            transform: rotate(0deg);
+        }
+        to {
+            color: black;
+            -ms-transform: rotate(180deg); /* IE 9 */
+            -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+            transform: rotate(180deg);
+        }
+    }
+    @keyframes toCollapsed{
+        from {
+            color: black;
+            -ms-transform: rotate(180deg); /* IE 9 */
+            -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+            transform: rotate(180deg);
+        }
+        to {
+            color: #82B1FF; /*Blue A200 */
+            -ms-transform: rotate(0deg); /* IE 9 */
+            -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+            transform: rotate(0deg);
+        }
+    }
