@@ -10,8 +10,21 @@ import SkillsFormatter from '../Formatter/SkillsFormatter'
 
 import StringEditor from '../Editor/StringEditor'
 
-export default class ColDefFactory {
+/*
 
+Case:
+Client, Type, Number, Title -> Asset, Asset Tag
+Status:
+State -> Group, Member
+Details:
+Description -> Last updated
+
+Master-Detail rows
+Details should include ticket history.
+
+*/
+
+export default class ColDefFactory {
   createColDefs () {
     var columnDefs = [{
       headerName: '#',
@@ -31,8 +44,8 @@ export default class ColDefFactory {
           enablePivot: true,
           width: 150,
           pinned: true,
-          editable: true,
           // use a React cellEditor
+          editable: true,
           cellEditorFramework: StringEditor
         }, {
           headerName: 'Country',
