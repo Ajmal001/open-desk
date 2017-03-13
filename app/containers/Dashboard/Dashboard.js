@@ -9,7 +9,8 @@ import ColDefFactory from './Data/ColDefFactory'
 import ColumnHeader from './Components/ColumnHeader'
 import DatePicker from './Components/DatePicker'
 
-// import '../manifest.css'
+import TextField from 'react-md/lib/TextFields'
+import Button from 'react-md/lib/Buttons/Button'
 
 export default class Dashboard extends React.Component {
   constructor () {
@@ -63,9 +64,9 @@ export default class Dashboard extends React.Component {
     this.api = params.api
     this.columnApi = params.columnApi
   }
-  onQuickFilterText (event) {
+  onQuickFilterText (value) {
     this.setState({
-      quickFilterText: event.target.value
+      quickFilterText: value
     })
   }
 
@@ -76,52 +77,62 @@ export default class Dashboard extends React.Component {
     })
   }
   render () {
-    let toolbar = (
-      <div>
-        <input type='text' placeholder='Filter...'
-          onChange={this.onQuickFilterText.bind(this)}
-          />
-        <button onClick={this.onRefreshData.bind(this)}>
-            Generate Dataset
-        </button>
-        <button id='btDestroyGrid' disabled={!this.state.showGrid}
-          onClick={this.onShowGrid.bind(this, false)}>
-            Destroy Grid
-        </button>
-        <button id='btCreateGrid' disabled={this.state.showGrid}
-          onClick={this.onShowGrid.bind(this, true)}>
-            Create Grid
-        </button>
-      </div>
-    )
+    // let toolbar = (
+    //   <div>
+    //     <input type='text' placeholder='Filter...'
+    //       onChange={this.onQuickFilterText.bind(this)}
+    //       />
+    //     <button onClick={this.onRefreshData.bind(this)}>
+    //         Generate Dataset
+    //     </button>
+    //     <button id='btDestroyGrid' disabled={!this.state.showGrid}
+    //       onClick={this.onShowGrid.bind(this, false)}>
+    //         Destroy Grid
+    //     </button>
+    //     <button id='btCreateGrid' disabled={this.state.showGrid}
+    //       onClick={this.onShowGrid.bind(this, true)}>
+    //         Create Grid
+    //     </button>
+    //   </div>
+    // )
 
-    return <div>
-      {toolbar}
-      <div id='ag-grid-container' className='ag-material'>
-        <AgGridReact
+    return (
+      <div>
+        <Button icon primary onClick={this.onRefreshData.bind(this)}>sync</Button>
+        <Button icon primary onClick={this.onRefreshData.bind(this)}>error</Button>
+        <Button floating secondary>note_add</Button>
+        <TextField id='floatingCenterTitle'
+          onChange={this.onQuickFilterText.bind(this)}
+          label='Master Search...'
+          lineDirection='center'
+          className='md-cell md-cell--bottom'
+      />
+        <div id='ag-grid-container' className='ag-material'>
+          <AgGridReact
           // gridOptions is optional - it's possible to provide
           // all values as React props
-          gridOptions={this.gridOptions}
+            gridOptions={this.gridOptions}
           // listening for events
-          onGridReady={this.onGridReady.bind(this)}
+            onGridReady={this.onGridReady.bind(this)}
           // binding to simple properties
-          quickFilterText={this.state.quickFilterText}
+            quickFilterText={this.state.quickFilterText}
           // binding to an object property
-          icons={this.state.icons}
+            icons={this.state.icons}
           // binding to array properties
-          columnDefs={this.state.columnDefs}
-          rowData={this.state.rowData}
+            columnDefs={this.state.columnDefs}
+            rowData={this.state.rowData}
           // no binding, just providing hard coded strings for the properties
-          suppressRowClickSelection
-          rowSelection='multiple'
-          enableColResize
-          enableSorting
-          enableFilter
-          groupHeaders
-          rowHeight='48'
+            suppressRowClickSelection
+            rowSelection='multiple'
+            enableColResize
+            enableSorting
+            enableFilter
+            groupHeaders
+            rowHeight='48'
           />
+        </div>
       </div>
-    </div>
+    )
   }
 
 }
