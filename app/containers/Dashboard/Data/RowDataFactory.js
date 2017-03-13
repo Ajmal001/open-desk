@@ -8,15 +8,15 @@ export default class RowDataFactory {
     for (var i = 0; i < 200; i++) {
       // type, number, client, title, priority, state, team, member, notes, updated, created
       rowData.push({
-        type: 'Incident',
-        number: '0011',
-        client: 'CLIENT_NAME',
-        title: 'Ticket Title Here',
-        priority: 1,
-        state: 'Open',
-        team: 'Global Network',
-        member: 'Kenji Rasp',
-        notes: 'Working on Drop and Recreate on RG1',
+        type: RefData.TYPE[Math.floor(Math.random() * RefData.TYPE.length)],
+        number: RefData.NUMBER[Math.floor(Math.random() * RefData.NUMBER.length)],
+        client: RefData.CLIENT[Math.floor(Math.random() * RefData.CLIENT.length)],
+        title: RefData.TITLE[Math.floor(Math.random() * RefData.TITLE.length)],
+        priority: RefData.PRIORITY[Math.floor(Math.random() * RefData.PRIORITY.length)],
+        state: RefData.STATE[Math.floor(Math.random() * RefData.STATE.length)],
+        team: RefData.TEAM[Math.floor(Math.random() * RefData.TEAM.length)],
+        member: RefData.MEMBER[Math.floor(Math.random() * RefData.MEMBER.length)],
+        notes: RefData.NOTES[Math.floor(Math.random() * RefData.NOTES.length)],
         updated: RefData.UPDATED[i % RefData.DOB.length],
         created: RefData.CREATED[i % RefData.DOB.length]
       })
