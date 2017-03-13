@@ -1,29 +1,9 @@
-// @import './styles/normalize.scss';
-// //  Roboto Font and Material Icons
-// @import './styles/google-fonts.css';
-//
-// // React-MD Theme: Blue-Green
-// // @import './styles/md-theme-gridless.scss';
-// //  Material Design Chat Drawer
-// // @import './styles/chat-drawer.scss';
-//
-// @import './styles/bootstrap.css';
-// @import './styles/bootstrap-theme.css';
-//
-// // React-Data-Grid Custom Styles
-// @import './styles/data-table.scss';
-// //  Basic Progress Bar
-// @import './styles/progress.scss';
-
-// $fa-font-path: "~font-awesome/fonts";
-// @import './styles/scss/font-awesome.scss';
-
-//  Roboto Font and Material Icons
 @import './styles/google-fonts.css';
-//
-// @import './styles/dashboard.css';
+// AG Grid styles
 @import './styles/ag-grid.css';
 @import './styles/theme-material.css';
+// React-MD Theme: Blue-Green
+@import './styles/md-theme-gridless.scss';
 
 
 * {
@@ -36,7 +16,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 100px);
   /*padding-left: 16px;
   padding-right: 16px;*/
 }
@@ -83,6 +63,7 @@
         -ms-transform: rotate(180deg); /* IE 9 */
         -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
         transform: rotate(180deg);
+        margin-bottom: 4px;
     }
     .collapsed {
         color: cornflowerblue;
