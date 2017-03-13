@@ -6,27 +6,42 @@ export default class RowDataFactory {
     var rowData = []
 
     for (var i = 0; i < 200; i++) {
-      var countryData = RefData.COUNTRIES[i % RefData.COUNTRIES.length]
+      // type, number, client, title, priority, state, team, member, notes, updated, created
       rowData.push({
-        name: RefData.FIRST_NAMES[i % RefData.FIRST_NAMES.length] + ' ' + RefData.LAST_NAMES[i % RefData.LAST_NAMES.length],
-        skills: {
-          android: Math.random() < 0.4,
-          html5: Math.random() < 0.4,
-          mac: Math.random() < 0.4,
-          windows: Math.random() < 0.4,
-          css: Math.random() < 0.4
-        },
-        dob: RefData.DOB[i % RefData.DOB.length],
-        address: RefData.ADDRESSES[i % RefData.ADDRESSES.length],
-        years: Math.round(Math.random() * 100),
-        proficiency: Math.round(Math.random() * 100),
-        country: countryData.country,
-        continent: countryData.continent,
-        language: countryData.language,
-        mobile: this.createRandomPhoneNumber(),
-        landline: this.createRandomPhoneNumber()
+        type: 'Incident',
+        number: '0011',
+        client: 'CLIENT_NAME',
+        title: 'Ticket Title Here',
+        priority: 1,
+        state: 'Open',
+        team: 'Global Network',
+        member: 'Kenji Rasp',
+        notes: 'Working on Drop and Recreate on RG1',
+        updated: RefData.DOB[i % RefData.DOB.length],
+        created: RefData.DOB[i % RefData.DOB.length]
       })
     }
+    //   var countryData = RefData.COUNTRIES[i % RefData.COUNTRIES.length]
+    //   rowData.push({
+    //     name: RefData.FIRST_NAMES[i % RefData.FIRST_NAMES.length] + ' ' + RefData.LAST_NAMES[i % RefData.LAST_NAMES.length],
+    //     skills: {
+    //       android: Math.random() < 0.4,
+    //       html5: Math.random() < 0.4,
+    //       mac: Math.random() < 0.4,
+    //       windows: Math.random() < 0.4,
+    //       css: Math.random() < 0.4
+    //     },
+    //     dob: RefData.DOB[i % RefData.DOB.length],
+    //     address: RefData.ADDRESSES[i % RefData.ADDRESSES.length],
+    //     years: Math.round(Math.random() * 100),
+    //     proficiency: Math.round(Math.random() * 100),
+    //     country: countryData.country,
+    //     continent: countryData.continent,
+    //     language: countryData.language,
+    //     mobile: this.createRandomPhoneNumber(),
+    //     landline: this.createRandomPhoneNumber()
+    //   })
+    // }
 
     return rowData
   }

@@ -33,28 +33,28 @@ export default class ColDefFactory {
         headerGroupComponentFramework: ColumnGroupHeader,
         children: [{
           headerName: 'Type',
-          field: 'name',
+          field: 'type',
           enableRowGroup: true,
-          width: 100,
+          width: 60,
           pinned: true,
           // use a React cellEditor
           editable: true,
           cellEditorFramework: StringEditor
         }, {
           headerName: 'Number',
-          field: 'name',
+          field: 'number',
           enableRowGroup: true,
           width: 100,
           pinned: true
         }, {
           headerName: 'Client',
-          field: 'name',
+          field: 'client',
           enableRowGroup: true,
-          width: 125,
+          width: 120,
           pinned: true
         }, {
           headerName: 'Title',
-          field: 'name',
+          field: 'title',
           enableRowGroup: true,
           width: 250,
           pinned: true,
@@ -69,7 +69,7 @@ export default class ColDefFactory {
         headerGroupComponentFramework: ColumnGroupExpandingHeader,
         children: [{
           headerName: 'Priority',
-          field: 'name',
+          field: 'priority',
           enableRowGroup: true,
           width: 100,
           pinned: true,
@@ -78,7 +78,7 @@ export default class ColDefFactory {
           cellEditorFramework: StringEditor
         }, {
           headerName: 'State',
-          field: 'name',
+          field: 'state',
           enableRowGroup: true,
           width: 100,
           pinned: true,
@@ -87,9 +87,9 @@ export default class ColDefFactory {
           cellEditorFramework: StringEditor
         }, {
           headerName: 'Team',
-          field: 'name',
+          field: 'team',
           enableRowGroup: true,
-          width: 150,
+          width: 120,
           pinned: true,
         // use a React cellEditor
           editable: true,
@@ -97,7 +97,7 @@ export default class ColDefFactory {
           columnGroupShow: 'open'
         }, {
           headerName: 'Member',
-          field: 'name',
+          field: 'member',
           enableRowGroup: true,
           width: 150,
           pinned: true,
@@ -113,16 +113,29 @@ export default class ColDefFactory {
         headerGroupComponentFramework: ColumnGroupExpandingHeader,
         children: [{
           headerName: 'Notes',
-          field: 'name',
+          field: 'notes',
           enableRowGroup: true,
-          width: 300,
+          width: 350,
           pinned: true,
           // use a React cellEditor
           editable: true,
           cellEditorFramework: StringEditor
         }, {
           headerName: 'Updated',
-          field: 'dob',
+          field: 'updated',
+          width: 100,
+          enableRowGroup: true,
+          pinned: true,
+          // filter: 'date',
+          cellRenderer: function (params) {
+            return pad(params.value.getDate(), 2) + '/' +
+              pad(params.value.getMonth() + 1, 2) + '/' +
+              params.value.getFullYear()
+          },
+          columnGroupShow: 'open'
+        }, {
+          headerName: 'created',
+          field: 'created',
           width: 100,
           enableRowGroup: true,
           pinned: true,
