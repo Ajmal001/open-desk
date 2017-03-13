@@ -17,8 +17,8 @@ export default class RowDataFactory {
         team: 'Global Network',
         member: 'Kenji Rasp',
         notes: 'Working on Drop and Recreate on RG1',
-        updated: RefData.DOB[i % RefData.DOB.length],
-        created: RefData.DOB[i % RefData.DOB.length]
+        updated: RefData.UPDATED[i % RefData.DOB.length],
+        created: RefData.CREATED[i % RefData.DOB.length]
       })
     }
     //   var countryData = RefData.COUNTRIES[i % RefData.COUNTRIES.length]

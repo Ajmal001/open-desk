@@ -1,4 +1,71 @@
 export default class RefData {}
+/*
+type: 'Incident',
+number: '0011',
+client: 'CLIENT_NAME',
+title: 'Ticket Title Here',
+priority: 1,
+state: 'Open',
+team: 'Global Network',
+member: 'Kenji Rasp',
+notes: 'Working on Drop and Recreate on RG1',
+updated: RefData.DOB[i % RefData.DOB.length],
+created: RefData.DOB[i % RefData.DOB.length]
+*/
+
+RefData.TYPE = [
+  'Incident', 'Request', 'Change', 'Problem'
+]
+
+RefData.NUMBER = Array.from({length: 200},
+  (v, k) => Math.floor(Math.random() * 200)
+)
+
+RefData.CLIENT = ['Bob Ross', 'Betsy Ross', 'Greg Couch', 'David Bendersky']
+
+RefData.TITLE = ['HARD DOWN - RG1 power failure, cannot remedy', 'Store RG3 damaged during robbery', 'Security camera failure', 'Personal question', 'Transfer to HR']
+
+RefData.PRIORITY = ['Low', 'Medium', 'High', 'Critical']
+
+RefData.STATE = ['Unassigned', 'Assigned', 'Resolved', 'Dispatch', 'Severity']
+
+RefData.TEAM = ['Global Network', 'Security Ops', 'POS Production', 'POS Config', 'Retail Materials']
+
+RefData.MEMBER = [
+  'Kenji Rasp', 'Rob Dellinger', 'Kris Aamot', 'Malcom Reynolds', 'Myron Jackson', 'Darren Drew'
+]
+
+RefData.NOTES = ['Working on Drop and Recreate on RG1', 'NCR Dispatch - RG3178', 'Client will call back', 'Unable to reach client', 'Related to severity']
+
+RefData.UPDATED = [
+  new Date(2000, 0, 1),
+  new Date(2001, 1, 2),
+  new Date(2002, 2, 3),
+  new Date(2003, 3, 4),
+  new Date(2004, 4, 5),
+  new Date(2005, 5, 6),
+  new Date(2006, 6, 7),
+  new Date(2007, 7, 8),
+  new Date(2008, 8, 9),
+  new Date(2009, 9, 10),
+  new Date(2010, 10, 11),
+  new Date(2011, 11, 12)
+]
+
+RefData.CREATED = [
+  new Date(2011, 12, 12),
+  new Date(2012, 1, 2),
+  new Date(2012, 2, 3),
+  new Date(2013, 3, 4),
+  new Date(2014, 4, 5),
+  new Date(2015, 5, 6),
+  new Date(2016, 6, 7),
+  new Date(2017, 7, 8),
+  new Date(2018, 8, 9),
+  new Date(2019, 9, 10),
+  new Date(2020, 10, 11),
+  new Date(2021, 11, 12)
+]
 
 RefData.FIRST_NAMES = [
   'Sophie', 'Isabelle', 'Emily', 'Olivia', 'Lily', 'Chloe', 'Isabella',
