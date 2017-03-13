@@ -1,6 +1,8 @@
 import React from 'react'
 import RefData from '../Data/RefData'
 
+import TextField from 'react-md/lib/TextFields'
+
 var KEY_BACKSPACE = 8
 var KEY_DELETE = 46
 var KEY_F2 = 113
@@ -39,6 +41,7 @@ export default class StringEditor extends React.Component {
     }
 
     return {
+      original: startValue,
       value: startValue,
       putCursorAtEndOnFocus: putCursorAtEndOnFocus,
       highlightAllOnFocus: highlightAllOnFocus
@@ -47,15 +50,22 @@ export default class StringEditor extends React.Component {
 
   render () {
     return (
-      <input ref='textField' value={this.state.value} onChange={this.onChangeListener.bind(this)} />
+      // <input ref='textField' value={this.state.value} onChange={this.onChangeListener.bind(this)} />
+      <TextField id='floatingCenterTitle' ref='textField'
+        value={this.state.value}
+        onChange={this.onChangeListener.bind(this)}
+        label={`Editing: "${this.state.original}"`}
+        lineDirection='center'
+        className='md-cell md-cell--bottom'
+    />
     )
   }
 
-  onChangeListener (event) {
+  onChangeListener (value) {
     // if doing React, you will probably be using a library for managing immutable
     // objects better. to keep this example simple, we don't use one.
     var newState = {
-      value: event.target.value,
+      value,
       putCursorAtEndOnFocus: this.state.putCursorAtEndOnFocus,
       highlightAllOnFocus: this.state.highlightAllOnFocus
     }

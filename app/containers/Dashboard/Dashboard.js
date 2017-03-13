@@ -77,29 +77,11 @@ export default class Dashboard extends React.Component {
     })
   }
   render () {
-    // let toolbar = (
-    //   <div>
-    //     <input type='text' placeholder='Filter...'
-    //       onChange={this.onQuickFilterText.bind(this)}
-    //       />
-    //     <button onClick={this.onRefreshData.bind(this)}>
-    //         Generate Dataset
-    //     </button>
-    //     <button id='btDestroyGrid' disabled={!this.state.showGrid}
-    //       onClick={this.onShowGrid.bind(this, false)}>
-    //         Destroy Grid
-    //     </button>
-    //     <button id='btCreateGrid' disabled={this.state.showGrid}
-    //       onClick={this.onShowGrid.bind(this, true)}>
-    //         Create Grid
-    //     </button>
-    //   </div>
-    // )
-
     return (
       <div>
         <Button icon primary onClick={this.onRefreshData.bind(this)}>sync</Button>
-        <Button icon primary onClick={this.onRefreshData.bind(this)}>error</Button>
+        <Button icon primary>file_download</Button>
+        <Button icon primary>error</Button>
         <Button floating secondary>note_add</Button>
         <TextField id='floatingCenterTitle'
           onChange={this.onQuickFilterText.bind(this)}
