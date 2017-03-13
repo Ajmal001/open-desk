@@ -32,18 +32,12 @@ export default class ColDefFactory {
         headerName: 'Case',
         headerGroupComponentFramework: ColumnGroupHeader,
         children: [{
-          headerName: 'Client',
-          field: 'name',
-          enableRowGroup: true,
-          width: 150,
-          pinned: true
-        }, {
           headerName: 'Type',
           field: 'name',
           enableRowGroup: true,
-          width: 150,
+          width: 100,
           pinned: true,
-        // use a React cellEditor
+          // use a React cellEditor
           editable: true,
           cellEditorFramework: StringEditor
         }, {
@@ -53,10 +47,16 @@ export default class ColDefFactory {
           width: 100,
           pinned: true
         }, {
+          headerName: 'Client',
+          field: 'name',
+          enableRowGroup: true,
+          width: 125,
+          pinned: true
+        }, {
           headerName: 'Title',
           field: 'name',
           enableRowGroup: true,
-          width: 200,
+          width: 250,
           pinned: true,
           suppressSorting: true,
         // use a React cellEditor
