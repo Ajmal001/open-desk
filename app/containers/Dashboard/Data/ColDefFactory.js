@@ -1,6 +1,7 @@
 import RefData from './RefData'
 
 import ColumnGroupHeader from '../Components/ColumnGroupHeader'
+import ColumnGroupExpandingHeader from '../Components/ColumnGroupExpandingHeader'
 
 import SkillsFilter from '../Filter/SkillsFilter'
 import ProficiencyFilter from '../Filter/ProficiencyFilter'
@@ -29,6 +30,7 @@ export default class ColDefFactory {
     var columnDefs = [
       {
         headerName: 'Case',
+        headerGroupComponentFramework: ColumnGroupHeader,
         children: [{
           headerName: 'Client',
           field: 'name',
@@ -64,7 +66,7 @@ export default class ColDefFactory {
       },
       {
         headerName: 'Status',
-        headerGroupComponentFramework: ColumnGroupHeader,
+        headerGroupComponentFramework: ColumnGroupExpandingHeader,
         children: [{
           headerName: 'Priority',
           field: 'name',
@@ -108,7 +110,7 @@ export default class ColDefFactory {
       },
       {
         headerName: 'Details',
-        headerGroupComponentFramework: ColumnGroupHeader,
+        headerGroupComponentFramework: ColumnGroupExpandingHeader,
         children: [{
           headerName: 'Notes',
           field: 'name',

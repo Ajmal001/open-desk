@@ -44,7 +44,7 @@ export default class Dashboard extends React.Component {
       defaultColDef: {
         headerComponentFramework: ColumnHeader,
         headerComponentParams: {
-          menuIcon: 'fa-bars'
+          menuIcon: '<i class="material-icons>menu</i>' // 'fa-bars'
         },
         suppressMenu: true
       },
