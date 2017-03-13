@@ -45,7 +45,8 @@ export default class Dashboard extends React.Component {
         headerComponentFramework: ColumnHeader,
         headerComponentParams: {
           menuIcon: 'fa-bars'
-        }
+        },
+        suppressMenu: true
       },
       // this is a simple property
       rowBuffer: 10 // no need to set this, the default is fine for almost all scenarios

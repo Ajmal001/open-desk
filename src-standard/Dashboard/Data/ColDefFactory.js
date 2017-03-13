@@ -34,8 +34,99 @@ export default class ColDefFactory {
       suppressMenu: true,
       pinned: true
     },
+    {
+      headerName: 'Case',
+      headerGroupComponentFramework: ColumnGroupHeader,
+      children: [{
+        headerName: 'Client',
+        field: 'name',
+        enableRowGroup: true,
+        enablePivot: true,
+        width: 150,
+        pinned: true,
+        // use a React cellEditor
+        editable: true,
+        cellEditorFramework: StringEditor
+      }, {
+        headerName: 'Type',
+        field: 'name',
+        enableRowGroup: true,
+        enablePivot: true,
+        width: 150,
+        pinned: true,
+        // use a React cellEditor
+        editable: true,
+        cellEditorFramework: StringEditor,
+        columnGroupShow: 'open'
+      }, {
+        headerName: 'Number',
+        field: 'name',
+        enableRowGroup: true,
+        enablePivot: true,
+        width: 150,
+        pinned: true,
+        // use a React cellEditor
+        editable: true,
+        cellEditorFramework: StringEditor,
+        columnGroupShow: 'open'
+      }, {
+        headerName: 'Title',
+        field: 'name',
+        enableRowGroup: true,
+        enablePivot: true,
+        width: 150,
+        pinned: true,
+        // use a React cellEditor
+        editable: true,
+        cellEditorFramework: StringEditor,
+        columnGroupShow: 'open'
+      }]
+    },
+    {
+      headerName: 'Status',
+      headerGroupComponentFramework: ColumnGroupHeader,
+      children: [{
+        headerName: 'Name',
+        field: 'name',
+        enableRowGroup: true,
+        enablePivot: true,
+        width: 150,
+        pinned: true,
+        // use a React cellEditor
+        editable: true,
+        cellEditorFramework: StringEditor
+      }, {
+        headerName: 'Country',
+        field: 'country',
+        width: 150,
+        enableRowGroup: true,
+        enablePivot: true,
+        // an example of using a non-React cell renderer
+        cellRenderer: countryCellRenderer,
+        pinned: true,
+        filterParams: {
+          cellRenderer: countryCellRenderer,
+          cellHeight: 20
+        },
+        columnGroupShow: 'open'
+      }, {
+        headerName: 'DOB',
+        field: 'dob',
+        width: 110,
+        enableRowGroup: true,
+        enablePivot: true,
+        filter: 'date',
+        pinned: true,
+        cellRenderer: function (params) {
+          return pad(params.value.getDate(), 2) + '/' +
+            pad(params.value.getMonth() + 1, 2) + '/' +
+            params.value.getFullYear()
+        },
+        columnGroupShow: 'open'
+      }]
+    },
       {
-        headerName: 'Employee',
+        headerName: 'Details',
         headerGroupComponentFramework: ColumnGroupHeader,
         children: [{
           headerName: 'Name',
