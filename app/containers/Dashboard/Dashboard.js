@@ -12,11 +12,17 @@ import DateEditor from './Editor/DateEditor'
 import TextField from 'react-md/lib/TextFields'
 import Button from 'react-md/lib/Buttons/Button'
 
+import NavigationDrawer from 'react-md/lib/NavigationDrawers'
+import Autocomplete from 'react-md/lib/Autocompletes'
+
+import RefData from './Data/RefData'
+
 export default class Dashboard extends React.Component {
   constructor () {
     super()
     this.state = {
-      quickFilterText: null,
+      quickFilterText: '',
+      searching: false,
       showGrid: true,
       showToolPanel: false,
       columnDefs: new ColDefFactory().createColDefs(),
@@ -28,7 +34,6 @@ export default class Dashboard extends React.Component {
         sortDescending: '<i class="material-icons">arrow_drop_up</i>'
       }
     }
-
     /* the grid options are optional, because you can provide every property
     to the grid via standard React properties. however, the react interface
     doesn't block you from using the standard JavaScript interface if you
@@ -52,22 +57,33 @@ export default class Dashboard extends React.Component {
       // this is a simple property
       rowBuffer: 10 // no need to set this, the default is fine for almost all scenarios
     }
+    this._showSearch = this._showSearch.bind(this)
+    this._hideSearch = this._hideSearch.bind(this)
+    this._resetSearch = this._resetSearch.bind(this)
   }
-
   onShowGrid (show) {
     this.setState({
       showGrid: show
     })
   }
-
   onGridReady (params) {
     this.api = params.api
     this.columnApi = params.columnApi
   }
+
   onQuickFilterText (value) {
     this.setState({
       quickFilterText: value
     })
+  }
+  _showSearch () {
+    this.setState({ searching: true })
+  }
+  _hideSearch () {
+    this.setState({ searching: false })
+  }
+  _resetSearch () {
+    this.setState({ value: '' })
   }
 
   onRefreshData () {
@@ -77,44 +93,84 @@ export default class Dashboard extends React.Component {
     })
   }
   render () {
+    // let title
+    let actions
+    let children
+    if (this.state.searching) {
+      // nav = <Button onClick={this._hideSearch} icon>arrow_back</Button>
+      actions = <Button onClick={this._resetSearch} icon>close</Button>
+      children = (
+        <Autocomplete
+          id='quick-filter'
+          placeholder='Quick Search...'
+          block
+          paddedBlock={false}
+          data={RefData.AUTOCOMPLETES}
+          value={this.state.quickFilterText}
+          onAutocomplete={this.onQuickFilterText.bind(this)}
+          onChange={this.onQuickFilterText.bind(this)}
+          className='md-title--toolbar'
+          inputClassName='md-text-field--toolbar'
+            />
+          )
+    } else {
+          // title = 'Pastries';
+          // nav = <Button icon>menu</Button>;
+      actions = <Button onClick={this._showSearch} icon>search</Button>
+    }
+
     return (
       <div>
-        <Button icon primary onClick={this.onRefreshData.bind(this)}>sync</Button>
-        <Button icon primary>file_download</Button>
-        <Button icon primary>error</Button>
-        <Button floating secondary>note_add</Button>
-        <TextField id='floatingCenterTitle'
-          onChange={this.onQuickFilterText.bind(this)}
-          label='Master Search...'
-          lineDirection='center'
-          className='md-cell md-cell--bottom'
-      />
-        <div id='ag-grid-container' className='ag-material'>
-          <AgGridReact
+        <NavigationDrawer
+          // navItems={NavItems}
+          mobileDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY}
+          tabletDrawerType={NavigationDrawer.DrawerTypes.FLOATING}
+          desktopDrawerType={NavigationDrawer.DrawerTypes.FLOATING}
+          toolbarTitle='Case Stroke | open case manager'
+          toolbarActions={actions}
+          toolbarChildren={children}
+          // drawerTitle='Tools'
+    >
+          <div id='ag-grid-container' className='ag-material'>
+            <AgGridReact
           // gridOptions is optional - it's possible to provide
           // all values as React props
-            gridOptions={this.gridOptions}
+              gridOptions={this.gridOptions}
           // listening for events
-            onGridReady={this.onGridReady.bind(this)}
+              onGridReady={this.onGridReady.bind(this)}
           // binding to simple properties
-            quickFilterText={this.state.quickFilterText}
+              quickFilterText={this.state.quickFilterText}
           // binding to an object property
-            icons={this.state.icons}
+              icons={this.state.icons}
           // binding to array properties
-            columnDefs={this.state.columnDefs}
-            rowData={this.state.rowData}
+              columnDefs={this.state.columnDefs}
+              rowData={this.state.rowData}
           // no binding, just providing hard coded strings for the properties
-            suppressRowClickSelection
-            rowSelection='multiple'
-            enableColResize
-            enableSorting
-            enableFilter
-            groupHeaders
-            rowHeight='48'
+              suppressRowClickSelection
+              rowSelection='multiple'
+              enableColResize
+              enableSorting
+              enableFilter
+              groupHeaders
+              rowHeight='48'
           />
-        </div>
+          </div>
+        </NavigationDrawer>
       </div>
     )
   }
 
 }
+
+/*
+<Button icon primary onClick={this.onRefreshData.bind(this)}>sync</Button>
+<Button icon primary>file_download</Button>
+<Button icon primary>error</Button>
+<Button floating secondary>note_add</Button>
+<TextField id='floatingCenterTitle'
+  onChange={this.onQuickFilterText.bind(this)}
+  label='Master Search...'
+  lineDirection='center'
+  className='md-cell md-cell--bottom'
+/>
+*/
