@@ -20,6 +20,19 @@ body {
   // background-image:
 }
 
+.ag-material .ag-body {
+  background-color: #f6f6f6;
+}
+.ag-material .ag-row-odd {
+  background-color: #ddebf7;
+}
+.ag-material .ag-row-even {
+  background-color: #fff;
+}
+.ag-material .ag-row-selected {
+  background-color: #c7c7c7;
+}
+
 #ag-grid-container {
   position: fixed;
   bottom: 0;
