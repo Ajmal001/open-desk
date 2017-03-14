@@ -117,11 +117,11 @@ export default class Dashboard extends React.Component {
           // title = 'Pastries';
           // nav = <Button icon>menu</Button>;
       actions = [
-        <Button icon onClick={this._showSearch} >search</Button>,
-        <Button icon onClick={this.onRefreshData.bind(this)}>sync</Button>,
-        <Button icon >file_download</Button>,
-        <Button icon >error</Button>,
-        <Button icon >note_add</Button>
+        <Button disabled icon style={{color: '#FF6D00'}} >error</Button>,
+        <Button disabled icon style={{color: '#FFD600'}} >file_download</Button>,
+        <Button disabled icon style={{color: '#00c853'}} >note_add</Button>,
+        <Button icon style={{color: '#6200EA'}} onClick={this.onRefreshData.bind(this)}>sync</Button>,
+        <Button icon onClick={this._showSearch} >search</Button>
       ]
     }
 
@@ -158,6 +158,7 @@ export default class Dashboard extends React.Component {
               enableSorting
               enableFilter
               groupHeaders
+              headerHeight='32'
               rowHeight='48'
           />
           </div>
