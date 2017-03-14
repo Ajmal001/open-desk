@@ -126,7 +126,7 @@ export default class ColDefFactory {
           width: 100,
           enableRowGroup: true,
           pinned: true,
-          // filter: 'date',
+          filter: 'date',
           cellRenderer: function (params) {
             return pad(params.value.getDate(), 2) + '/' +
               pad(params.value.getMonth() + 1, 2) + '/' +
@@ -139,7 +139,7 @@ export default class ColDefFactory {
           width: 100,
           enableRowGroup: true,
           pinned: true,
-          // filter: 'date',
+          filter: 'date',
           cellRenderer: function (params) {
             return pad(params.value.getDate(), 2) + '/' +
               pad(params.value.getMonth() + 1, 2) + '/' +

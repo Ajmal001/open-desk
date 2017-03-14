@@ -38,7 +38,7 @@ export default class Dashboard extends React.Component {
     */
     this.gridOptions = {
       // We register the react date component that ag-grid will use to render
-      dateComponentFramework: DatePicker,
+      // dateComponentFramework: DatePicker,
       //  Enable floating filters
       floatingFilter: true,
       // this is how you listen for events using gridOptions
