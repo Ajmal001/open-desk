@@ -24,7 +24,7 @@ body {
 //   background-color: #f6f6f6;
 // }
 .ag-material .ag-row-odd {
-  background-color: #ECEFF1;
+  background-color: #E0F2F1;
 }
 .ag-material .ag-row-even {
   background-color: #fff;
@@ -36,7 +36,8 @@ body {
 #ag-grid-container {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  min-width: calc(100% - 350px);
+  max-width: 100%;
   height: calc(100vh - 64px);
   .material-icons {
     font-size: 16px !important;

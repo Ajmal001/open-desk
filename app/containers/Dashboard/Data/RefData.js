@@ -18,7 +18,7 @@ RefData.TYPE = [
 ]
 
 RefData.NUMBER = Array.from({length: 200},
-  (v, k) => Math.floor(Math.random() * 200)
+  (v, k) => Math.floor(Math.random() * 200) * 100
 )
 
 RefData.CLIENT = ['Bob Ross', 'Betsy Ross', 'Greg Couch', 'David Bendersky']

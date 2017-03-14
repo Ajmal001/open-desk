@@ -35,7 +35,7 @@ export default class ColDefFactory {
           headerName: 'Type',
           field: 'type',
           enableRowGroup: true,
-          width: 60,
+          width: 75,
           pinned: true,
           // use a React cellEditor
           editable: true,
@@ -44,20 +44,18 @@ export default class ColDefFactory {
           headerName: 'Number',
           field: 'number',
           enableRowGroup: true,
-          width: 100,
+          width: 95,
           pinned: true
         }, {
           headerName: 'Client',
           field: 'client',
           enableRowGroup: true,
           width: 120,
-          pinned: true
         }, {
           headerName: 'Title',
           field: 'title',
           enableRowGroup: true,
           width: 250,
-          pinned: true,
           suppressSorting: true,
         // use a React cellEditor
           editable: true,
@@ -72,7 +70,6 @@ export default class ColDefFactory {
           field: 'priority',
           enableRowGroup: true,
           width: 100,
-          pinned: true,
         // use a React cellEditor
           editable: true,
           cellEditorFramework: StringEditor
@@ -81,7 +78,6 @@ export default class ColDefFactory {
           field: 'state',
           enableRowGroup: true,
           width: 100,
-          pinned: true,
         // use a React cellEditor
           editable: true,
           cellEditorFramework: StringEditor
@@ -90,7 +86,6 @@ export default class ColDefFactory {
           field: 'team',
           enableRowGroup: true,
           width: 120,
-          pinned: true,
         // use a React cellEditor
           editable: true,
           cellEditorFramework: StringEditor,
@@ -100,7 +95,6 @@ export default class ColDefFactory {
           field: 'member',
           enableRowGroup: true,
           width: 150,
-          pinned: true,
           suppressSorting: true,
         // use a React cellEditor
           editable: true,
@@ -116,7 +110,6 @@ export default class ColDefFactory {
           field: 'notes',
           enableRowGroup: true,
           width: 350,
-          pinned: true,
           // use a React cellEditor
           editable: true,
           cellEditorFramework: StringEditor
@@ -125,7 +118,6 @@ export default class ColDefFactory {
           field: 'updated',
           width: 100,
           enableRowGroup: true,
-          pinned: true,
           filter: 'date',
           cellRenderer: function (params) {
             return pad(params.value.getDate(), 2) + '/' +
@@ -138,7 +130,6 @@ export default class ColDefFactory {
           field: 'created',
           width: 100,
           enableRowGroup: true,
-          pinned: true,
           filter: 'date',
           cellRenderer: function (params) {
             return pad(params.value.getDate(), 2) + '/' +
