@@ -20,14 +20,14 @@ body {
   // background-image:
 }
 
-// .ag-material .ag-body {
-//   background-color: #f6f6f6;
-// }
+.ag-material .ag-body {
+  background-color: inherit;
+}
 .ag-material .ag-row-odd {
   background-color: #E0F2F1;
 }
 .ag-material .ag-row-even {
-  background-color: #fff;
+  background-color: inherit;
 }
 // .ag-material .ag-row-selected {
 //   background-color: #c7c7c7;
@@ -36,8 +36,10 @@ body {
 #ag-grid-container {
   position: fixed;
   bottom: 0;
-  min-width: calc(100% - 350px);
-  max-width: 100%;
+  // width: inherit;
+  width: 100%;
+  // min-width: calc(100% - 350px);
+  // max-width: 100%;
   height: calc(100vh - 64px);
   .material-icons {
     font-size: 16px !important;
