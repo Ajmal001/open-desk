@@ -83,7 +83,7 @@ export default class Dashboard extends React.Component {
     this.setState({ searching: false })
   }
   _resetSearch () {
-    this.setState({ value: '' })
+    this.setState({ searching: false, quickFilterText: '' })
   }
 
   onRefreshData () {
@@ -116,20 +116,26 @@ export default class Dashboard extends React.Component {
     } else {
           // title = 'Pastries';
           // nav = <Button icon>menu</Button>;
-      actions = <Button onClick={this._showSearch} icon>search</Button>
+      actions = [
+        <Button icon onClick={this._showSearch} >search</Button>,
+        <Button icon onClick={this.onRefreshData.bind(this)}>sync</Button>,
+        <Button icon >file_download</Button>,
+        <Button icon >error</Button>,
+        <Button icon >note_add</Button>
+      ]
     }
 
     return (
       <div>
         <NavigationDrawer
-          // navItems={NavItems}
-          mobileDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY}
-          tabletDrawerType={NavigationDrawer.DrawerTypes.FLOATING}
-          desktopDrawerType={NavigationDrawer.DrawerTypes.FLOATING}
           toolbarTitle='Case Stroke | open case manager'
           toolbarActions={actions}
           toolbarChildren={children}
-          // drawerTitle='Tools'
+          mobileDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY}
+          tabletDrawerType={NavigationDrawer.DrawerTypes.FLOATING}
+          desktopDrawerType={NavigationDrawer.DrawerTypes.FLOATING}
+          drawerTitle='Chat Room'
+          navItems={[<span>This will eventually be a chat</span>]}
     >
           <div id='ag-grid-container' className='ag-material'>
             <AgGridReact
