@@ -10,7 +10,7 @@ import ProficiencyFormatter from '../Formatter/ProficiencyFormatter'
 import SkillsFormatter from '../Formatter/SkillsFormatter'
 
 import StringEditor from '../Editor/StringEditor'
-
+import DateEditor from '../Editor/DateEditor'
 /*
 
 Case:

@@ -24,8 +24,15 @@
 }
 
 .ag-header-group-cell, .ag-header-cell {
+  // height: 48px;
   border: 1px solid #d3d3d3 !important;
 }
+
+.md-picker-container {
+  max-width: calc(100% - 2px) !important;
+  max-height: calc(100% - 2px) !important;
+}
+
 
 /* Base styles */
 

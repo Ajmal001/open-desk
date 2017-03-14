@@ -7,7 +7,7 @@ import RowDataFactory from './Data/RowDataFactory'
 import ColDefFactory from './Data/ColDefFactory'
 
 import ColumnHeader from './Components/ColumnHeader'
-import DatePicker from './Components/DatePicker'
+import DateEditor from './Editor/DateEditor'
 
 import TextField from 'react-md/lib/TextFields'
 import Button from 'react-md/lib/Buttons/Button'
@@ -38,7 +38,7 @@ export default class Dashboard extends React.Component {
     */
     this.gridOptions = {
       // We register the react date component that ag-grid will use to render
-      // dateComponentFramework: DatePicker,
+      dateComponentFramework: DateEditor,
       //  Enable floating filters
       floatingFilter: true,
       // this is how you listen for events using gridOptions

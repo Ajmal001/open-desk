@@ -1,10 +1,12 @@
 import React from 'react'
 
+import DatePicker from 'react-md/lib/Pickers/DatePickerContainer'
+
 // Date Component to be used in the date filter.
 // This is a very simple example of how a React component can be plugged as a DateComponentFramework
 // as you can see, the only requirement is that the React component implements the required methods
 // getDate and setDate and that it calls back into props.onDateChanged every time that the date changes.
-export default class DatePicker extends React.Component {
+export default class DateEditor extends React.Component {
 
   constructor (props) {
     super(props)
@@ -25,37 +27,24 @@ export default class DatePicker extends React.Component {
   }
 
   render () {
-    // Inlining styles to make simpler the component
-    let filterStyle = {
-      margin: '2px'
-    }
-    let ddStyle = {
-      width: '30px'
-    }
-    let mmStyle = {
-      width: '30px'
-    }
-    let yyyyStyle = {
-      width: '60px'
-    }
-    let resetStyle = {
-      padding: '2px',
-      backgroundColor: 'red',
-      borderRadius: '3px',
-      fontSize: '10px',
-      marginRight: '5px',
-      color: 'white'
-    }
-
     return (
-      <div style={filterStyle}>
-        <span style={resetStyle} onClick={this.resetDate.bind(this)}>x</span>
-        <input onInput={this.onDateChanged.bind(this)} ref='dd' placeholder='dd' style={ddStyle} value={this.state.textBoxes.dd} maxLength='2' />/
-                <input onInput={this.onDateChanged.bind(this)} ref='mm' placeholder='mm' style={mmStyle} value={this.state.textBoxes.mm} maxLength='2' />/
-                <input onInput={this.onDateChanged.bind(this)} ref='yyyy' placeholder='yyyy' style={yyyyStyle} value={this.state.textBoxes.yyyy} maxLength='4' />
-      </div>
+      <DatePicker
+        id='inlineCenter'
+        lineDirection='center'
+        className='md-cell'
+    />
     )
   }
+  /*
+  <div style={filterStyle}>
+    <span style={resetStyle} onClick={this.resetDate.bind(this)}>x</span>
+    {this.state.textBoxes &&
+    <input onInput={this.onDateChanged.bind(this)} ref='dd' placeholder='dd' style={ddStyle} value={this.state.textBoxes.dd} maxLength='2' />/
+            <input onInput={this.onDateChanged.bind(this)} ref='mm' placeholder='mm' style={mmStyle} value={this.state.textBoxes.mm} maxLength='2' />/
+            <input onInput={this.onDateChanged.bind(this)} ref='yyyy' placeholder='yyyy' style={yyyyStyle} value={this.state.textBoxes.yyyy} maxLength='4' />
+    }
+  </div>
+  */
 
   //* ********************************************************************************
   //          METHODS REQUIRED BY AG-GRID
@@ -64,19 +53,22 @@ export default class DatePicker extends React.Component {
   getDate () {
     // ag-grid will call us here when in need to check what the current date value is hold by this
     // component.
-    return this.state.date
+    let temp = this.state.date ? this.state.date : false
+    return temp
   }
 
   setDate (date) {
     // ag-grid will call us here when it needs this component to update the date that it holds.
-    this.setState({
-      date: date,
-      textBoxes: {
-        dd: date.getDate(),
-        mm: date.getMonth() + 1,
-        yyyy: date.getFullYear()
-      }
-    })
+    if (date) {
+      this.setState({
+        date: date,
+        textBoxes: {
+          dd: date.getDate(),
+          mm: date.getMonth() + 1,
+          yyyy: date.getFullYear()
+        }
+      })
+    }
   }
 
   //* ********************************************************************************
@@ -161,6 +153,6 @@ export default class DatePicker extends React.Component {
 // which is the grid passing you the params for the cellRenderer.
 // this piece is optional. the grid will always pass the 'params'
 // props, so little need for adding this validation meta-data.
-DatePicker.propTypes = {
+DateEditor.propTypes = {
   params: React.PropTypes.object
 }
