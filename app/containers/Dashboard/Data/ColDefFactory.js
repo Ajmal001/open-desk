@@ -3,14 +3,16 @@ import RefData from './RefData'
 import ColumnGroupHeader from '../Components/ColumnGroupHeader'
 import ColumnGroupExpandingHeader from '../Components/ColumnGroupExpandingHeader'
 
-import SkillsFilter from '../Filter/SkillsFilter'
-import ProficiencyFilter from '../Filter/ProficiencyFilter'
+// import SkillsFilter from '../Filter/SkillsFilter'
+// import ProficiencyFilter from '../Filter/ProficiencyFilter'
 
-import ProficiencyFormatter from '../Formatter/ProficiencyFormatter'
-import SkillsFormatter from '../Formatter/SkillsFormatter'
+// import ProficiencyFormatter from '../Formatter/ProficiencyFormatter'
+// import SkillsFormatter from '../Formatter/SkillsFormatter'
+
+import StringFilter from '../Filter/StringFilter'
 
 import StringEditor from '../Editor/StringEditor'
-import DateEditor from '../Editor/DateEditor'
+// import DateEditor from '../Editor/DateEditor'
 /*
 
 Case:
@@ -51,6 +53,7 @@ export default class ColDefFactory {
           field: 'client',
           enableRowGroup: true,
           width: 120,
+          filterFramework: StringFilter
         }, {
           headerName: 'Title',
           field: 'title',
@@ -143,19 +146,19 @@ export default class ColDefFactory {
     return columnDefs
   }
 }
-
-// this is a simple cell renderer, putting together static html, no
-// need to use React for it.
-function countryCellRenderer (params) {
-  if (params.value) {
-    var flag = "<img border='0' width='15' height='10' " +
-      "style='margin-bottom: 2px' src='http://flags.fmcdn.net/data/flags/mini/" +
-      RefData.COUNTRY_CODES[params.value] + ".png'>"
-    return flag + ' ' + params.value
-  } else {
-    return null
-  }
-}
+//
+// // this is a simple cell renderer, putting together static html, no
+// // need to use React for it.
+// function countryCellRenderer (params) {
+//   if (params.value) {
+//     var flag = "<img border='0' width='15' height='10' " +
+//       "style='margin-bottom: 2px' src='http://flags.fmcdn.net/data/flags/mini/" +
+//       RefData.COUNTRY_CODES[params.value] + ".png'>"
+//     return flag + ' ' + params.value
+//   } else {
+//     return null
+//   }
+// }
 
 // Utility function used to pad the date formatting.
 function pad (num, totalStringSize) {
