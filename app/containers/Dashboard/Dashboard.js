@@ -9,7 +9,6 @@ import ColDefFactory from './Data/ColDefFactory'
 import ColumnHeader from './Components/ColumnHeader'
 import DateEditor from './Editor/DateEditor'
 
-import TextField from 'react-md/lib/TextFields'
 import Button from 'react-md/lib/Buttons/Button'
 
 import NavigationDrawer from 'react-md/lib/NavigationDrawers'
@@ -42,12 +41,12 @@ export default class Dashboard extends React.Component {
     what you want!
     */
     this.gridOptions = {
-      suppressMenu: true,
       floatingFilter: true,
       defaultColDef: {
+        suppressMenu: true,
         headerComponentFramework: ColumnHeader,
         headerComponentParams: {
-          menuIcon: '<i class="material-icons>menu</i>' // 'fa-bars'
+          menuIcon: '<i class="material-icons>menu</i>'
         },
         dateComponentFramework: DateEditor
       },
@@ -99,8 +98,7 @@ export default class Dashboard extends React.Component {
         <Autocomplete
           id='quick-filter'
           placeholder='Quick Search...'
-          block
-          paddedBlock={false}
+          block paddedBlock={false}
           autoFocus
           data={RefData.AUTOCOMPLETES}
           value={this.state.quickFilterText}
@@ -114,10 +112,11 @@ export default class Dashboard extends React.Component {
           // title = 'Pastries';
           // nav = <Button icon>menu</Button>;
       actions = [
-        <Button disabled icon style={{color: '#FF6D00'}} >error</Button>,
-        <Button disabled icon style={{color: '#FFD600'}} >file_download</Button>,
-        <Button disabled icon style={{color: '#00c853'}} >note_add</Button>,
+        // <Button disabled icon style={{color: '#FF6D00'}} >error</Button>,
+        // <Button disabled icon style={{color: '#FFD600'}} >file_download</Button>,
+        // <Button disabled icon style={{color: '#00c853'}} >note_add</Button>,
         <Button icon style={{color: '#6200EA'}} onClick={this.onRefreshData.bind(this)}>sync</Button>,
+        <Button icon >clear</Button>,
         <Button icon onClick={this._showSearch} >search</Button>
       ]
     }
