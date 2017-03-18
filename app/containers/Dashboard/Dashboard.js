@@ -42,19 +42,15 @@ export default class Dashboard extends React.Component {
     what you want!
     */
     this.gridOptions = {
-      // We register the react date component that ag-grid will use to render
-      dateComponentFramework: DateEditor,
-      //  Enable floating filters
+      suppressMenu: true,
       floatingFilter: true,
-      // this is how you listen for events using gridOptions
       defaultColDef: {
         headerComponentFramework: ColumnHeader,
         headerComponentParams: {
           menuIcon: '<i class="material-icons>menu</i>' // 'fa-bars'
         },
-        suppressMenu: true
+        dateComponentFramework: DateEditor
       },
-      // this is a simple property
       rowBuffer: 10 // no need to set this, the default is fine for almost all scenarios
     }
     this._showSearch = this._showSearch.bind(this)
@@ -105,6 +101,7 @@ export default class Dashboard extends React.Component {
           placeholder='Quick Search...'
           block
           paddedBlock={false}
+          autoFocus
           data={RefData.AUTOCOMPLETES}
           value={this.state.quickFilterText}
           onAutocomplete={this.onQuickFilterText.bind(this)}

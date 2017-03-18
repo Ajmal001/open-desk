@@ -67,7 +67,12 @@ RefData.CREATED = [
   new Date(2021, 11, 12)
 ]
 
-RefData.AUTOCOMPLETES = [].concat(RefData.TYPE, RefData.CLIENT, RefData.TITLE, RefData.PRIORITY, RefData.STATE, RefData.TEAM, RefData.MEMBER)
+RefData.AUTOCOMPLETES = [].concat(
+  RefData.TYPE,
+  RefData.PRIORITY,
+  RefData.STATE,
+  RefData.TEAM
+)
 
 RefData.FIRST_NAMES = [
   'Sophie', 'Isabelle', 'Emily', 'Olivia', 'Lily', 'Chloe', 'Isabella',

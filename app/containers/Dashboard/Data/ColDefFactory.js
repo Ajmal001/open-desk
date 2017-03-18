@@ -33,37 +33,44 @@ export default class ColDefFactory {
       {
         headerName: 'Case',
         headerGroupComponentFramework: ColumnGroupHeader,
-        children: [{
-          headerName: 'Type',
-          field: 'type',
-          enableRowGroup: true,
-          width: 75,
-          pinned: true,
+        children: [
+          {
+            headerName: '',
+            width: 40,
+            pinned: true,
+            checkboxSelection: true,
+            suppressSorting: true
+          }, {
+            headerName: 'Type',
+            field: 'type',
+            enableRowGroup: true,
+            width: 75,
+            pinned: true,
           // use a React cellEditor
-          editable: true,
-          cellEditorFramework: StringEditor
-        }, {
-          headerName: 'Number',
-          field: 'number',
-          enableRowGroup: true,
-          width: 95,
-          pinned: true
-        }, {
-          headerName: 'Client',
-          field: 'client',
-          enableRowGroup: true,
-          width: 120,
-          filterFramework: StringFilter
-        }, {
-          headerName: 'Title',
-          field: 'title',
-          enableRowGroup: true,
-          width: 250,
-          suppressSorting: true,
+            editable: true,
+            cellEditorFramework: StringEditor
+          }, {
+            headerName: 'Number',
+            field: 'number',
+            enableRowGroup: true,
+            width: 95,
+            pinned: true
+          }, {
+            headerName: 'Client',
+            field: 'client',
+            enableRowGroup: true,
+            width: 120,
+            filterFramework: StringFilter
+          }, {
+            headerName: 'Title',
+            field: 'title',
+            enableRowGroup: true,
+            width: 250,
+            suppressSorting: true,
         // use a React cellEditor
-          editable: true,
-          cellEditorFramework: StringEditor
-        }]
+            editable: true,
+            cellEditorFramework: StringEditor
+          }]
       },
       {
         headerName: 'Status',
