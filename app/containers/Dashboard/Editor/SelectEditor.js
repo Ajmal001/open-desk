@@ -20,6 +20,7 @@ export default class SelectEditor extends React.Component {
   // this for your ag-Grid cellEditor to work, however it makes sense to do this so the user
   // experience is similar to Excel
   createInitialState (props) {
+    var originalValue = props.value
     var startValue
     var putCursorAtEndOnFocus = false
     var highlightAllOnFocus = false
@@ -41,7 +42,7 @@ export default class SelectEditor extends React.Component {
     }
 
     return {
-      original: startValue,
+      original: originalValue,
       value: startValue,
       putCursorAtEndOnFocus: putCursorAtEndOnFocus,
       highlightAllOnFocus: highlightAllOnFocus
@@ -88,14 +89,6 @@ export default class SelectEditor extends React.Component {
     )
   }
 
-  componentDidMount () {
-    // console.log(this.textInput)
-    // console.log(this.textField)
-    // console.log(this.state.inputs)
-    //  select-editor
-    console.log(document.getElementById('select-editor'))
-  }
-
   onChangeListener (value) {
     // if doing React, you will probably be using a library for managing immutable
     // objects better. to keep this example simple, we don't use one.
@@ -118,6 +111,7 @@ export default class SelectEditor extends React.Component {
     // get ref from React component
     var eInput = document.getElementById('select-editor')
 
+    eInput.focus()
     if (this.highlightAllOnFocus) {
       // eInput.select()
       eInput.focus()

@@ -20,6 +20,7 @@ export default class StringEditor extends React.Component {
   // this for your ag-Grid cellEditor to work, however it makes sense to do this so the user
   // experience is similar to Excel
   createInitialState (props) {
+    var originalValue = props.value
     var startValue
     var putCursorAtEndOnFocus = false
     var highlightAllOnFocus = false
@@ -41,7 +42,7 @@ export default class StringEditor extends React.Component {
     }
 
     return {
-      original: startValue,
+      original: originalValue,
       value: startValue,
       putCursorAtEndOnFocus: putCursorAtEndOnFocus,
       highlightAllOnFocus: highlightAllOnFocus
