@@ -2,6 +2,7 @@ import React from 'react'
 import RefData from '../Data/RefData'
 
 import TextField from 'react-md/lib/TextFields'
+import Autocomplete from 'react-md/lib/Autocompletes'
 import SelectField from 'react-md/lib/SelectFields'
 
 var KEY_BACKSPACE = 8
@@ -51,18 +52,34 @@ export default class SelectEditor extends React.Component {
 
   render () {
     return (
-      <SelectField
-        id='selectButtonStates'
-        placeholder={<span>Editing {this.state.original && <em>: {this.state.original}</em>}</span>}
-        // placeholder='State'
-        menuItems={['A', 'B']}
-        itemLabel='abbreviation'
-        itemValue='abbreviation'
-        // position={SelectField.Positions.BELOW}
+      <Autocomplete
+        id='select-editor'
+        placeholder={this.state.original}
+        // block paddedBlock={false}
+        autoFocus
+        data={['1', '2', '3', '4']}
+        value={this.state.value}
         onChange={this.onChangeListener.bind(this)}
-        className='md-cell'
-        style={{zIndex: 100}}
-        />
+        onAutocomplete={this.onChangeListener.bind(this)}
+        lineDirection='center'
+        // className='md-title--toolbar'
+        // inputClassName='md-text-field--toolbar'
+          />
+
+      // <SelectField
+      //   // id='selectButtonStates'
+      //   placeholder={this.state.original}
+      //   // placeholder='State'
+      //   menuItems={['1', '2', '3', '4']}
+      //   // itemLabel='abbreviation'
+      //   // itemValue='abbreviation'
+      //   position={SelectField.Positions.BELOW}
+      //    value={this.state.value}
+      //   onChange={this.onChangeListener.bind(this)}
+      //   // className='md-cell'
+      //   style={{zIndex: 100}}
+      //   />
+      // .
       // <input ref='textField' value={this.state.value} onChange={this.onChangeListener.bind(this)} />
     //   <TextField id='floatingCenterTitle' ref='textField'
     //     value={this.state.value}
@@ -71,6 +88,14 @@ export default class SelectEditor extends React.Component {
     //     lineDirection='center'
     // />
     )
+  }
+
+  componentDidMount () {
+    // console.log(this.textInput)
+    // console.log(this.textField)
+    // console.log(this.state.inputs)
+    //  select-editor
+    console.log(document.getElementById('select-editor'))
   }
 
   onChangeListener (value) {
@@ -94,6 +119,16 @@ export default class SelectEditor extends React.Component {
   afterGuiAttached () {
     // get ref from React component
     var eInput = this.refs.textField
+
+
+    // console.log(this.refs)
+    // console.log(this.textInput)
+    // this.textInput.select()
+    // console.log(this.textInput)
+    // console.log(this.textField)
+    console.log("Select editor:", document.getElementById('select-editor'))
+    var eInput = document.getElementById('select-editor')
+
     eInput.focus()
     if (this.highlightAllOnFocus) {
       eInput.select()
