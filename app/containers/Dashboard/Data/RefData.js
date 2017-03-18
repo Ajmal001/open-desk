@@ -25,7 +25,7 @@ RefData.CLIENT = ['Bob Ross', 'Betsy Ross', 'Greg Couch', 'David Bendersky']
 
 RefData.TITLE = ['HARD DOWN - RG1 power failure, cannot remedy', 'Store RG3 damaged during robbery', 'Security camera failure', 'Personal question', 'Transfer to HR']
 
-RefData.PRIORITY = ['Low', 'Medium', 'High', 'Critical']
+RefData.PRIORITY = ['4 - Low', '3 - Medium', '2 - High', '1 - Critical']
 
 RefData.STATE = ['Unassigned', 'Assigned', 'Resolved', 'Dispatch', 'Severity']
 

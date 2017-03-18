@@ -142,7 +142,7 @@ export default class ColDefFactory {
           },
           columnGroupShow: 'open'
         }, {
-          headerName: 'created',
+          headerName: 'Created',
           field: 'created',
           width: 100,
           enableRowGroup: true,

@@ -51,7 +51,8 @@ export default class Dashboard extends React.Component {
         floatingFilterComponentParams: {
           suppressFilterButton: true
         },
-        dateComponentFramework: DateEditor
+        dateComponentFramework: DateEditor,
+        editable: true
       },
       rowBuffer: 10 // no need to set this, the default is fine for almost all scenarios
     }

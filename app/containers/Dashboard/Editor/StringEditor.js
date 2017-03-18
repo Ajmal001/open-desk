@@ -54,9 +54,10 @@ export default class StringEditor extends React.Component {
       <TextField id='floatingCenterTitle' ref='textField'
         value={this.state.value}
         onChange={this.onChangeListener.bind(this)}
-        label={`Editing: "${this.state.original}"`}
+        label={<span>Editing {this.state.original && <em>: {this.state.original}</em>}</span>}
         lineDirection='center'
-        className='md-cell md-cell--bottom'
+        // className='md-cell md-cell--bottom'
+        // style={{height: 20}}
     />
     )
   }
