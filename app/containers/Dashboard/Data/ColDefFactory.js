@@ -13,6 +13,7 @@ import ColumnGroupExpandingHeader from '../Components/ColumnGroupExpandingHeader
 import StringFilter from '../Filter/StringFilter'
 
 import StringEditor from '../Editor/StringEditor'
+import SelectEditor from '../Editor/SelectEditor'
 // import DateEditor from '../Editor/DateEditor'
 /*
 
@@ -49,7 +50,7 @@ export default class ColDefFactory {
             enableRowGroup: true,
             width: 75,
             pinned: true,
-            cellEditorFramework: StringEditor
+            cellEditorFramework: SelectEditor
           }, {
             headerName: 'Number',
             field: 'number',
@@ -85,13 +86,13 @@ export default class ColDefFactory {
           field: 'priority',
           enableRowGroup: true,
           width: 100,
-          cellEditorFramework: StringEditor
+          cellEditorFramework: SelectEditor
         }, {
           headerName: 'State',
           field: 'state',
           enableRowGroup: true,
           width: 100,
-          cellEditorFramework: StringEditor
+          cellEditorFramework: SelectEditor
         }, {
           headerName: 'Team',
           field: 'team',
@@ -99,7 +100,7 @@ export default class ColDefFactory {
           width: 120,
         // use a React cellEditor
           editable: true,
-          cellEditorFramework: StringEditor,
+          cellEditorFramework: SelectEditor,
           columnGroupShow: 'open'
         }, {
           headerName: 'Member',

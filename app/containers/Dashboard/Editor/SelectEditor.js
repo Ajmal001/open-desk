@@ -2,13 +2,14 @@ import React from 'react'
 import RefData from '../Data/RefData'
 
 import TextField from 'react-md/lib/TextFields'
+import SelectField from 'react-md/lib/SelectFields'
 
 var KEY_BACKSPACE = 8
 var KEY_DELETE = 46
 var KEY_F2 = 113
 
 // cell renderer for the proficiency column. this is a very basic cell editor,
-export default class StringEditor extends React.Component {
+export default class SelectEditor extends React.Component {
 
   constructor (props) {
     super(props)
@@ -50,15 +51,25 @@ export default class StringEditor extends React.Component {
 
   render () {
     return (
-      // <input ref='textField' value={this.state.value} onChange={this.onChangeListener.bind(this)} />
-      <TextField id='floatingCenterTitle' ref='textField'
-        value={this.state.value}
+      <SelectField
+        id='selectButtonStates'
+        placeholder={<span>Editing {this.state.original && <em>: {this.state.original}</em>}</span>}
+        // placeholder='State'
+        menuItems={['A', 'B']}
+        itemLabel='abbreviation'
+        itemValue='abbreviation'
+        // position={SelectField.Positions.BELOW}
         onChange={this.onChangeListener.bind(this)}
-        label={<span>Editing {this.state.original && <em>: {this.state.original}</em>}</span>}
-        lineDirection='center'
-        // className='md-cell md-cell--bottom'
-        // style={{height: 20}}
-    />
+        className='md-cell'
+        style={{zIndex: 100}}
+        />
+      // <input ref='textField' value={this.state.value} onChange={this.onChangeListener.bind(this)} />
+    //   <TextField id='floatingCenterTitle' ref='textField'
+    //     value={this.state.value}
+    //     onChange={this.onChangeListener.bind(this)}
+    //     label={<span>Editing {this.state.original && <em>: {this.state.original}</em>}</span>}
+    //     lineDirection='center'
+    // />
     )
   }
 
@@ -122,6 +133,6 @@ export default class StringEditor extends React.Component {
 // which is the grid passing you the params for the cellRenderer.
 // this piece is optional. the grid will always pass the 'params'
 // props, so little need for adding this validation meta-data.
-StringEditor.propTypes = {
+SelectEditor.propTypes = {
   params: React.PropTypes.object
 }

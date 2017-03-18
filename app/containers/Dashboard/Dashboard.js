@@ -158,7 +158,7 @@ export default class Dashboard extends React.Component {
               enableSorting
               enableFilter
               groupHeaders
-              // headerHeight='32'
+              headerHeight='32'
               rowHeight='48'
           />
           </div>

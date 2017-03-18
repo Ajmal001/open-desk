@@ -33,6 +33,12 @@ body {
 //   background-color: #c7c7c7;
 // }
 
+.ag-cell {
+  //  Original padding-top is 15 (+2 margin/border) for vertical alignment. Reverting.
+  padding: 2px !important;
+  line-height: 40px;
+}
+
 #ag-grid-container {
   position: fixed;
   bottom: 0;
@@ -44,7 +50,7 @@ body {
   }
 }
 
-.ag-header-group-cell {
+.ag-header-group-cell-with-group {
   border: 1px solid #d3d3d3 !important;
 }
 .ag-header-group-cell, .ag-header-cell {
@@ -53,10 +59,11 @@ body {
 
 .ag-floating-filter-full-body {
   input {
-    background-color: inherit;
+    background-color: #FAFAFA;
     border: none;
   }
 }
+
 .md-picker-container {
   max-width: calc(100% - 2px) !important;
   max-height: calc(100% - 2px) !important;
@@ -65,7 +72,7 @@ body {
 //  String Editor
 .ag-react-container {
   .md-text-field-container {
-    margin-top: -8px;
+    margin-top: -12px;
   }
   .md-divider {
     margin: 0;
