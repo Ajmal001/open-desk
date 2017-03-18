@@ -70,12 +70,21 @@ body {
 // .ag-header-row {
 //   height: 32px !important;
 // }
-
-.ag-header-group-cell, .ag-header-cell {
-  // height: 48px;
+.ag-header-group-cell {
   border: 1px solid #d3d3d3 !important;
 }
+.ag-header-group-cell, .ag-header-cell {
+  // height: 48px;
+  border-left: 1px solid #d3d3d3 !important;
+  border-right: 1px solid #d3d3d3 !important;
+}
 
+.ag-floating-filter-full-body {
+  input {
+    background-color: inherit;
+    border: none;
+  }
+}
 .md-picker-container {
   max-width: calc(100% - 2px) !important;
   max-height: calc(100% - 2px) !important;

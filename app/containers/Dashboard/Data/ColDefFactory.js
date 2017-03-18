@@ -1,5 +1,6 @@
 import RefData from './RefData'
 
+import ColumnHeader from '../Components/ColumnHeader'
 import ColumnGroupHeader from '../Components/ColumnGroupHeader'
 import ColumnGroupExpandingHeader from '../Components/ColumnGroupExpandingHeader'
 
@@ -39,7 +40,9 @@ export default class ColDefFactory {
             width: 40,
             pinned: true,
             checkboxSelection: true,
-            suppressSorting: true
+            suppressSorting: true,
+            // filter: 'checkbox',
+            suppressFilter: true
           }, {
             headerName: 'Type',
             field: 'type',
@@ -55,14 +58,17 @@ export default class ColDefFactory {
             enableRowGroup: true,
             width: 95,
             pinned: true
-          }, {
+          }]
+        }, {
             headerName: 'Client',
+            headerComponentFramework: ColumnHeader,
             field: 'client',
             enableRowGroup: true,
             width: 120,
-            filterFramework: StringFilter
+            // filterFramework: StringFilter
           }, {
             headerName: 'Title',
+            headerComponentFramework: ColumnGroupHeader,
             field: 'title',
             enableRowGroup: true,
             width: 250,
@@ -70,8 +76,7 @@ export default class ColDefFactory {
         // use a React cellEditor
             editable: true,
             cellEditorFramework: StringEditor
-          }]
-      },
+          },
       {
         headerName: 'Status',
         headerGroupComponentFramework: ColumnGroupExpandingHeader,
@@ -104,8 +109,7 @@ export default class ColDefFactory {
           headerName: 'Member',
           field: 'member',
           enableRowGroup: true,
-          width: 150,
-          suppressSorting: true,
+          width: 120,
         // use a React cellEditor
           editable: true,
           cellEditorFramework: StringEditor,
@@ -118,17 +122,19 @@ export default class ColDefFactory {
         children: [{
           headerName: 'Notes',
           field: 'notes',
-          enableRowGroup: true,
           width: 350,
+          enableRowGroup: true,
           // use a React cellEditor
           editable: true,
-          cellEditorFramework: StringEditor
+          cellEditorFramework: StringEditor,
+          suppressSorting: true
         }, {
           headerName: 'Updated',
           field: 'updated',
           width: 100,
           enableRowGroup: true,
           filter: 'date',
+          suppressFilter: true,
           cellRenderer: function (params) {
             return pad(params.value.getDate(), 2) + '/' +
               pad(params.value.getMonth() + 1, 2) + '/' +
@@ -141,6 +147,7 @@ export default class ColDefFactory {
           width: 100,
           enableRowGroup: true,
           filter: 'date',
+          suppressFilter: true,
           cellRenderer: function (params) {
             return pad(params.value.getDate(), 2) + '/' +
               pad(params.value.getMonth() + 1, 2) + '/' +

@@ -48,6 +48,9 @@ export default class Dashboard extends React.Component {
         headerComponentParams: {
           menuIcon: '<i class="material-icons>menu</i>'
         },
+        floatingFilterComponentParams: {
+          suppressFilterButton: true
+        },
         dateComponentFramework: DateEditor
       },
       rowBuffer: 10 // no need to set this, the default is fine for almost all scenarios
@@ -154,7 +157,7 @@ export default class Dashboard extends React.Component {
               enableSorting
               enableFilter
               groupHeaders
-              headerHeight='32'
+              // headerHeight='32'
               rowHeight='48'
           />
           </div>
