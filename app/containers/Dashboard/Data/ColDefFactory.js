@@ -49,34 +49,34 @@ export default class ColDefFactory {
             enableRowGroup: true,
             width: 75,
             pinned: true,
-          // use a React cellEditor
-            editable: true,
             cellEditorFramework: StringEditor
           }, {
             headerName: 'Number',
             field: 'number',
             enableRowGroup: true,
             width: 95,
-            pinned: true
+            pinned: true,
+            editable: false
           }]
-        }, {
-            headerName: 'Client',
-            headerComponentFramework: ColumnHeader,
-            field: 'client',
-            enableRowGroup: true,
-            width: 120,
+      }, {
+        headerName: 'Client',
+        headerComponentFramework: ColumnHeader,
+        field: 'client',
+        enableRowGroup: true,
+        width: 120,
+        cellEditorFramework: StringEditor
             // filterFramework: StringFilter
-          }, {
-            headerName: 'Title',
-            headerComponentFramework: ColumnGroupHeader,
-            field: 'title',
-            enableRowGroup: true,
-            width: 250,
-            suppressSorting: true,
+      }, {
+        headerName: 'Title',
+        headerComponentFramework: ColumnGroupHeader,
+        field: 'title',
+        enableRowGroup: true,
+        width: 250,
+        suppressSorting: true,
         // use a React cellEditor
-            editable: true,
-            cellEditorFramework: StringEditor
-          },
+        editable: true,
+        cellEditorFramework: StringEditor
+      },
       {
         headerName: 'Status',
         headerGroupComponentFramework: ColumnGroupExpandingHeader,
@@ -85,16 +85,12 @@ export default class ColDefFactory {
           field: 'priority',
           enableRowGroup: true,
           width: 100,
-        // use a React cellEditor
-          editable: true,
           cellEditorFramework: StringEditor
         }, {
           headerName: 'State',
           field: 'state',
           enableRowGroup: true,
           width: 100,
-        // use a React cellEditor
-          editable: true,
           cellEditorFramework: StringEditor
         }, {
           headerName: 'Team',
@@ -125,7 +121,6 @@ export default class ColDefFactory {
           width: 350,
           enableRowGroup: true,
           // use a React cellEditor
-          editable: true,
           cellEditorFramework: StringEditor,
           suppressSorting: true
         }, {
@@ -135,6 +130,7 @@ export default class ColDefFactory {
           enableRowGroup: true,
           filter: 'date',
           suppressFilter: true,
+          editable: false,
           cellRenderer: function (params) {
             return pad(params.value.getDate(), 2) + '/' +
               pad(params.value.getMonth() + 1, 2) + '/' +
@@ -148,6 +144,7 @@ export default class ColDefFactory {
           enableRowGroup: true,
           filter: 'date',
           suppressFilter: true,
+          editable: false,
           cellRenderer: function (params) {
             return pad(params.value.getDate(), 2) + '/' +
               pad(params.value.getMonth() + 1, 2) + '/' +

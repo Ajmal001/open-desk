@@ -36,47 +36,19 @@ body {
 #ag-grid-container {
   position: fixed;
   bottom: 0;
-  // width: inherit;
-  width: 100%;
-  // min-width: calc(100% - 350px);
-  // max-width: 100%;
+  width: calc(100% - 350px);
   height: calc(100vh - 64px);
   .material-icons {
     font-size: 16px !important;
     line-height: 1.5 !important;
   }
 }
-// .ag-body-viewport-wrapper {
-//   margin: 0 !important;
-// }
-// .ag-floating-filter-body {
-//   height: 32px;
-// }
-// .ag-header {
-//   height: 96 !important;
-// }
-// .ag-body {
-//   top: 96px !important;
-// }
 
-// .ag-header {
-//   height: 96px !important;
-// }
-//
-// .ag-body {
-//   top: 96px !important;
-// }
-//
-// .ag-header-row {
-//   height: 32px !important;
-// }
 .ag-header-group-cell {
   border: 1px solid #d3d3d3 !important;
 }
 .ag-header-group-cell, .ag-header-cell {
-  // height: 48px;
-  border-left: 1px solid #d3d3d3 !important;
-  border-right: 1px solid #d3d3d3 !important;
+  border-left: 0.5px solid #d3d3d3 !important;
 }
 
 .ag-floating-filter-full-body {
@@ -90,13 +62,24 @@ body {
   max-height: calc(100% - 2px) !important;
 }
 
-.md-text-field-container {
-  // margin: none;
-  // position: relative;
-  // top: 0;
-  margin-top: -12px;
+//  String Editor
+.ag-react-container {
+  .md-text-field-container {
+    margin-top: -8px;
+  }
+  .md-divider {
+    margin: 0;
+  }
 }
 
+@media screen and (min-width: 768px) {
+  .md-drawer--left {
+      width: 350px;
+  }
+  #main-content {
+    margin-left: 350px;
+  }
+}
 /* Base styles */
 
 
