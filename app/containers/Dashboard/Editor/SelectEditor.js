@@ -1,9 +1,7 @@
 import React from 'react'
 import RefData from '../Data/RefData'
 
-import TextField from 'react-md/lib/TextFields'
 import Autocomplete from 'react-md/lib/Autocompletes'
-import SelectField from 'react-md/lib/SelectFields'
 
 var KEY_BACKSPACE = 8
 var KEY_DELETE = 46
@@ -118,20 +116,11 @@ export default class SelectEditor extends React.Component {
   // view, it may not yet be in the browser (put in by ag-Grid) so focus will not work
   afterGuiAttached () {
     // get ref from React component
-    var eInput = this.refs.textField
-
-
-    // console.log(this.refs)
-    // console.log(this.textInput)
-    // this.textInput.select()
-    // console.log(this.textInput)
-    // console.log(this.textField)
-    console.log("Select editor:", document.getElementById('select-editor'))
     var eInput = document.getElementById('select-editor')
 
-    eInput.focus()
     if (this.highlightAllOnFocus) {
-      eInput.select()
+      // eInput.select()
+      eInput.focus()
     } else {
       // when we started editing, we want the carot at the end, not the start.
       // this comes into play in two scenarios: a) when user hits F2 and b)
