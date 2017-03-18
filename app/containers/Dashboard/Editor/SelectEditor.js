@@ -14,6 +14,7 @@ export default class SelectEditor extends React.Component {
     super(props)
     // the entire ag-Grid properties are passed as one single object inside the params
     this.state = this.createInitialState(props)
+    this.handleBlur = this.handleBlur.bind(this)
   }
 
   // work out how to present the data based on what the user hit. you don't need to do any of
@@ -45,7 +46,30 @@ export default class SelectEditor extends React.Component {
       original: originalValue,
       value: startValue,
       putCursorAtEndOnFocus: putCursorAtEndOnFocus,
-      highlightAllOnFocus: highlightAllOnFocus
+      highlightAllOnFocus: highlightAllOnFocus,
+
+      options: ['1 - Critical', '2 - High', '3 - Medium', '4 - Low']
+
+    }
+  }
+
+  handleBlur (e) {
+    let value = e.target.value
+    console.log(value)
+    // let value = this.state.value
+    if (!this.state.options.indexOf(value) > -1) {
+      console.log('Reverting value')
+      this.setState({value: this.state.original})
+    } else {
+      this.setState({value})
+    }
+  }
+
+  componentWillUnmount () {
+    let value = this.state.value
+    if (!this.state.options.indexOf(value) > -1) {
+      console.log('Reverting value on unmount')
+      this.setState({value: this.state.original})
     }
   }
 
@@ -55,12 +79,17 @@ export default class SelectEditor extends React.Component {
         id='select-editor'
         placeholder={this.state.original}
         // block paddedBlock={false}
-        autoFocus
-        data={['1', '2', '3', '4']}
+        // autoFocus
+        data={this.state.options}
         value={this.state.value}
         onChange={this.onChangeListener.bind(this)}
         onAutocomplete={this.onChangeListener.bind(this)}
-        lineDirection='center'
+        inline
+        fullWidth
+        onBlur={this.handleBlur}
+        // required
+
+        // lineDirection='center'
         // className='md-title--toolbar'
         // inputClassName='md-text-field--toolbar'
           />
